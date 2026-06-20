@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daily Edit — Parliament of the Snake</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #111;
+      --surface: #1c1c1c;
+      --border: #2e2e2e;
+      --text: #d4d4d4;
+      --muted: #555;
+      --accent: #c8a96e;
+      --raw-bg: #151515;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: Georgia, 'Times New Roman', serif;
+      min-height: 100vh;
+      padding: 2.5rem 1.2rem 5rem;
+      max-width: 680px;
+      margin: 0 auto;
+      line-height: 1.75;
+    }
+
+    header { margin-bottom: 2rem; }
+
+    .project { font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.3rem; }
+    .session-date { font-size: 1.3rem; color: var(--accent); font-style: italic; }
+
+    .progress { display: flex; gap: 6px; margin: 1.8rem 0 2rem; }
+    .dot { height: 4px; flex: 1; background: var(--border); border-radius: 2px; cursor: pointer; transition: background 0.2s; }
+    .dot.done    { background: var(--accent); }
+    .dot.current { background: var(--text); }
+
+    .label { font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--muted); margin-bottom: 0.6rem; }
+
+    .raw {
+      background: var(--raw-bg);
+      border-left: 3px solid var(--border);
+      padding: 1rem 1.2rem;
+      color: #888;
+      font-size: 0.95rem;
+      margin-bottom: 2rem;
+      white-space: pre-wrap;
+    }
+
+    textarea {
+      width: 100%;
+      min-height: 240px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      color: var(--text);
+      font-family: Georgia, serif;
+      font-size: 1rem;
+      line-height: 1.75;
+      padding: 1rem;
+      resize: vertical;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    textarea:focus { border-color: var(--accent); }
+
+    .nav { display: flex; gap: 0.8rem; margin-top: 1.5rem; align-items: center; }
+    .spacer { flex: 1; }
+
+    button {
+      padding: 0.55rem 1.3rem;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      background: transparent;
+      color: var(--text);
+      font-family: Georgia, serif;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    button:hover { border-color: var(--accent); color: var(--accent); }
+    button:disabled { opacity: 0.25; cursor: default; }
+    button.primary { background: var(--accent); border-color: var(--accent); color: #111; }
+    button.primary:hover { background: #d4b87e; border-color: #d4b87e; color: #111; }
+
+    /* Setup */
+    .setup { max-width: 460px; margin: 4rem auto; }
+    .setup h2 { color: var(--accent); font-style: italic; margin-bottom: 1rem; font-size: 1.4rem; }
+    .setup p { color: var(--muted); font-size: 0.88rem; line-height: 1.65; margin-bottom: 1.4rem; }
+    .setup a { color: var(--accent); }
+    .setup input {
+      width: 100%; padding: 0.65rem 1rem;
+      background: var(--surface); border: 1px solid var(--border); border-radius: 4px;
+      color: var(--text); font-family: monospace; font-size: 0.9rem; outline: none; margin-bottom: 1rem;
+    }
+    .setup input:focus { border-color: var(--accent); }
+
+    /* State screens */
+    .center { text-align: center; padding: 5rem 0; }
+    .center h2 { font-style: italic; font-size: 1.6rem; margin-bottom: 0.8rem; }
+    .center p { color: var(--muted); font-size: 0.9rem; }
+    .err { color: #d07070; }
+
+    .token-btn {
+      position: fixed; bottom: 1.2rem; right: 1.2rem;
+      font-size: 0.72rem; color: var(--muted); cursor: pointer;
+      background: none; border: none; font-family: Georgia, serif; padding: 0;
+    }
+    .token-btn:hover { color: var(--text); border: none; }
+  </style>
+</head>
+<body>
+
+<div id="app"></div>
+<button class="token-btn" onclick="showSetup()">⚙ token</button>
+
+<script>
+const OWNER  = 'heinoriese';
+const REPO   = 'Wheres-The-Cue-Ball-Going-';
+const BRANCH = 'main';
+const N      = 5;
+
+let snippets = [], picked = [], edits = [], current = 0;
+
+// ── Seeded random (mulberry32) ─────────────────────────────────
+function mulberry32(seed) {
+  return function() {
+    seed = (seed + 0x6D2B79F5) >>> 0;
+    let t = Math.imul(seed ^ seed >>> 15, 1 | seed);
+    t = (t + Math.imul(t ^ t >>> 7, 61 | t)) ^ t;
+    return ((t ^ t >>> 14) >>> 0) / 4294967296;
+  };
+}
+
+function pickSnippets(all, dateStr) {
+  const seed  = parseInt(dateStr.replace(/-/g, ''), 10);
+  const rand  = mulberry32(seed);
+  const idx   = Array.from({length: all.length}, (_, i) => i);
+  for (let i = idx.length - 1; i > 0; i--) {
+    const j = Math.floor(rand() * (i + 1));
+    [idx[i], idx[j]] = [idx[j], idx[i]];
+  }
+  return idx.slice(0, N).sort((a, b) => a - b).map(i => ({i, text: all[i]}));
+}
+
+// ── Helpers ────────────────────────────────────────────────────
+function todayStr() { return new Date().toISOString().slice(0, 10); }
+
+function fmtDate(s) {
+  return new Date(s + 'T12:00:00').toLocaleDateString('en-GB', {
+    weekday: 'long', day: 'numeric', month: 'long', year: 'numeric'
+  });
+}
+
+function esc(s) {
+  return (s || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+function toB64(str) {
+  const bytes = new TextEncoder().encode(str);
+  let bin = '';
+  bytes.forEach(b => bin += String.fromCharCode(b));
+  return btoa(bin);
+}
+
+function getPAT() { return localStorage.getItem('gh_pat') || ''; }
+function setPAT(p) { localStorage.setItem('gh_pat', p.trim()); }
+
+// ── GitHub API ─────────────────────────────────────────────────
+async function fetchInbox() {
+  const r = await fetch(
+    `https://raw.githubusercontent.com/${OWNER}/${REPO}/${BRANCH}/inbox.md?t=${Date.now()}`
+  );
+  if (!r.ok) throw new Error('Could not load inbox.md — is the branch merged to main?');
+  return r.text();
+}
+
+function parseInbox(text) {
+  return text.split('\n---\n').map(s => s.trim()).filter(s => s && !s.startsWith('#'));
+}
+
+async function commitSession(dateStr, content) {
+  const pat  = getPAT();
+  const path = `sessions/${dateStr}.md`;
+  const url  = `https://api.github.com/repos/${OWNER}/${REPO}/contents/${path}`;
+
+  let sha;
+  const check = await fetch(url, { headers: { Authorization: `token ${pat}` } });
+  if (check.ok) sha = (await check.json()).sha;
+
+  const body = { message: `Daily edit — ${dateStr}`, content: toB64(content), branch: BRANCH };
+  if (sha) body.sha = sha;
+
+  const r = await fetch(url, {
+    method: 'PUT',
+    headers: { Authorization: `token ${pat}`, 'Content-Type': 'application/json' },
+    body: JSON.stringify(body),
+  });
+  if (!r.ok) throw new Error((await r.json()).message || 'Commit failed');
+}
+
+function buildSessionMd(dateStr) {
+  const lines = [`# Editing Session — ${dateStr}`, ''];
+  picked.forEach((p, i) => {
+    lines.push(`## ${i + 1} of ${picked.length}  (inbox #${p.i + 1})`, '');
+    lines.push('**Raw:**', '');
+    p.text.split('\n').forEach(l => lines.push('> ' + l));
+    lines.push('', '**Edited:**', '', edits[i] || '*(skipped)*', '', '---', '');
+  });
+  return lines.join('\n');
+}
+
+// ── Render ─────────────────────────────────────────────────────
+const app = document.getElementById('app');
+function render(html) { app.innerHTML = html; }
+
+function showSetup(err) {
+  render(`
+    <div class="setup">
+      <h2>One-time setup</h2>
+      <p>
+        The editor needs a GitHub token to commit your sessions back to the repo.
+        <br><br>
+        Go to GitHub → Settings → Developer settings → Personal access tokens → Tokens (classic).
+        Generate a new token with the <strong>repo</strong> scope. Paste it below.
+      </p>
+      <input type="password" id="pat" placeholder="ghp_…" value="${esc(getPAT())}">
+      ${err ? `<p class="err" style="margin-bottom:1rem">${esc(err)}</p>` : ''}
+      <button class="primary" onclick="savePAT()">Save &amp; start editing</button>
+    </div>
+  `);
+  document.getElementById('pat').focus();
+}
+
+function savePAT() {
+  const v = document.getElementById('pat').value.trim();
+  if (!v) return;
+  setPAT(v);
+  init();
+}
+
+function saveEdit() {
+  const a = document.getElementById('edit-area');
+  if (a) edits[current] = a.value;
+}
+
+function showSnippet() {
+  const p      = picked[current];
+  const isLast = current === picked.length - 1;
+  const dots   = picked.map((_, i) => `<div class="dot ${i < current ? 'done' : i === current ? 'current' : ''}" onclick="goTo(${i})"></div>`).join('');
+
+  render(`
+    <header>
+      <div class="project">Parliament of the Snake</div>
+      <div class="session-date">${fmtDate(todayStr())}</div>
+    </header>
+
+    <div class="progress">${dots}</div>
+
+    <div class="label">Raw — passage ${current + 1} of ${picked.length}</div>
+    <div class="raw">${esc(p.text)}</div>
+
+    <div class="label">Your edit</div>
+    <textarea id="edit-area">${esc(edits[current])}</textarea>
+
+    <div class="nav">
+      <button onclick="goTo(${current - 1})" ${current === 0 ? 'disabled' : ''}>← Back</button>
+      <div class="spacer"></div>
+      ${isLast
+        ? `<button class="primary" onclick="doCommit()">Commit session ↗</button>`
+        : `<button class="primary" onclick="goTo(${current + 1})">Next →</button>`}
+    </div>
+  `);
+
+  document.getElementById('edit-area').addEventListener('input', e => { edits[current] = e.target.value; });
+}
+
+function goTo(i) {
+  saveEdit();
+  current = Math.max(0, Math.min(picked.length - 1, i));
+  showSnippet();
+  window.scrollTo(0, 0);
+}
+
+async function doCommit() {
+  saveEdit();
+  render('<div class="center"><h2>Committing…</h2></div>');
+  try {
+    await commitSession(todayStr(), buildSessionMd(todayStr()));
+    render(`
+      <div class="center">
+        <h2 style="color:var(--accent)">Done.</h2>
+        <p>Saved to <code>sessions/${todayStr()}.md</code></p>
+        <p style="margin-top:2rem">Back tomorrow.</p>
+      </div>
+    `);
+  } catch (e) {
+    const isAuth = /401|credential|token/i.test(e.message);
+    render(`
+      <div class="center">
+        <h2 class="err">Commit failed</h2>
+        <p>${esc(e.message)}</p>
+        <div style="display:flex;gap:1rem;justify-content:center;margin-top:1.5rem">
+          <button onclick="init()">Try again</button>
+          ${isAuth ? `<button onclick="showSetup('Token rejected')">Update token</button>` : ''}
+        </div>
+      </div>
+    `);
+  }
+}
+
+// ── Boot ───────────────────────────────────────────────────────
+async function init() {
+  if (!getPAT()) { showSetup(); return; }
+  render('<div class="center"><h2 style="color:var(--muted);font-size:1rem">Loading…</h2></div>');
+  try {
+    const raw  = await fetchInbox();
+    snippets   = parseInbox(raw);
+    if (!snippets.length) throw new Error('inbox.md has no snippets');
+    picked  = pickSnippets(snippets, todayStr());
+    edits   = picked.map(p => p.text);
+    current = 0;
+    showSnippet();
+  } catch (e) {
+    render(`
+      <div class="center">
+        <h2 class="err">Couldn't load</h2>
+        <p>${esc(e.message)}</p>
+        <button onclick="init()" style="margin-top:1.5rem">Retry</button>
+      </div>
+    `);
+  }
+}
+
+init();
+</script>
+</body>
+</html>

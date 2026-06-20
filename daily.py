@@ -32,16 +32,32 @@ def parse_inbox():
     return snippets
 
 
+def mulberry32(seed):
+    """Same algorithm as editor.html so web and local picks always match."""
+    def rand():
+        nonlocal seed
+        seed = (seed + 0x6D2B79F5) & 0xFFFFFFFF
+        t = ((seed ^ (seed >> 15)) * (1 | seed)) & 0xFFFFFFFF
+        t = (t + ((t ^ (t >> 7)) * (61 | t))) & 0xFFFFFFFF
+        t = t ^ (t >> 14)
+        return (t & 0xFFFFFFFF) / 4294967296
+    return rand
+
+
 def pick_for_day(snippets, today=None):
     if today is None:
         today = date.today()
     seed = int(today.strftime("%Y%m%d"))
-    rng = random.Random(seed)
+    rand = mulberry32(seed)
     count = len(snippets)
     if count == 0:
         return []
-    indices = rng.sample(range(count), min(SNIPPETS_PER_SESSION, count))
-    return [(i, snippets[i]) for i in sorted(indices)]
+    indices = list(range(count))
+    for i in range(count - 1, 0, -1):
+        j = int(rand() * (i + 1))
+        indices[i], indices[j] = indices[j], indices[i]
+    chosen = sorted(indices[:SNIPPETS_PER_SESSION])
+    return [(i, snippets[i]) for i in chosen]
 
 
 def format_session(picked, today_str):
