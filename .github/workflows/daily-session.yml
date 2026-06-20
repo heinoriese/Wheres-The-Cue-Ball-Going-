@@ -22,83 +22,23 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           TODAY=$(date +%Y-%m-%d)
-          EXISTING=$(gh issue list --label "daily-edit" --state open --search "Daily Edit — $TODAY" --json number --jq '.[0].number // ""')
+          EXISTING=$(gh issue list --label "daily-edit" --state open --search "Daily Edit $TODAY" --json number --jq '.[0].number // ""')
           echo "existing=$EXISTING" >> $GITHUB_OUTPUT
           echo "today=$TODAY" >> $GITHUB_OUTPUT
 
-      - name: Generate session and create issue
+      - name: Generate body and create issue
         if: steps.check.outputs.existing == ''
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           TODAY=${{ steps.check.outputs.today }}
-
-          # Make sure the label exists
           gh label create "daily-edit" --color "0075ca" --description "Daily editing session" 2>/dev/null || true
-
-          # Generate snippet body using Python
-          BODY=$(python3 - <<'PYEOF'
-import random
-from datetime import date
-from pathlib import Path
-
-SNIPPETS_PER_SESSION = 5
-INBOX_FILE = "inbox.md"
-
-def parse_inbox():
-    path = Path(INBOX_FILE)
-    if not path.exists():
-        return []
-    text = path.read_text(encoding="utf-8")
-    raw = [s.strip() for s in text.split("\n---\n")]
-    return [s for s in raw if s and not s.startswith("#")]
-
-def pick_for_day(snippets):
-    today = date.today()
-    seed = int(today.strftime("%Y%m%d"))
-    rng = random.Random(seed)
-    count = len(snippets)
-    if count == 0:
-        return []
-    indices = rng.sample(range(count), min(SNIPPETS_PER_SESSION, count))
-    return [(i, snippets[i]) for i in sorted(indices)]
-
-snippets = parse_inbox()
-picked = pick_for_day(snippets)
-
-if not picked:
-    print("_No snippets found in inbox.md yet. Add some and push them._")
-else:
-    lines = [
-        f"**{len(picked)} snippets from your inbox. Edit each one — cut it, sharpen it, rewrite it.**",
-        "",
-        "Reply to this issue with your edited versions, or commit them to `sessions/`.",
-        "",
-    ]
-    for n, (idx, text) in enumerate(picked, 1):
-        quoted = "\n".join(f"> {line}" if line else ">" for line in text.splitlines())
-        lines += [
-            "---",
-            "",
-            f"### {n} of {len(picked)} &nbsp;&nbsp; *(inbox #{idx+1})*",
-            "",
-            quoted,
-            "",
-            "**Your edit:**",
-            "",
-            "",
-        ]
-    lines.append("---")
-    print("\n".join(lines))
-PYEOF
-          )
-
+          python3 generate_issue_body.py > /tmp/issue_body.md
           gh issue create \
-            --title "Daily Edit — $TODAY" \
+            --title "Daily Edit $TODAY" \
             --label "daily-edit" \
-            --body "$BODY"
+            --body-file /tmp/issue_body.md
 
       - name: Already exists
         if: steps.check.outputs.existing != ''
-        run: |
-          echo "Issue already exists for today (#${{ steps.check.outputs.existing }}). Skipping."
+        run: echo "Issue already exists for today (#${{ steps.check.outputs.existing }}). Skipping."
