@@ -73,6 +73,7 @@
     .center h2 { font-style: italic; font-size: 1.6rem; margin-bottom: 0.8rem; }
     .center p { color: var(--muted); font-size: 0.9rem; margin-bottom: 0.5rem; }
     .err { color: #d07070; }
+    .pass-badge { float: right; font-size: 0.62rem; color: var(--muted); letter-spacing: 0.1em; font-style: normal; }
     .token-btn {
       position: fixed; bottom: 1.2rem; right: 1.2rem;
       font-size: 0.72rem; color: var(--muted); cursor: pointer;
@@ -93,6 +94,7 @@ const N = 5;
 let snippets = [], picked = [], edits = [], flags = [], current = 0;
 let seenIndices = new Set();
 let sessionRound = 0;
+let progress = {}, progressSha = null;
 
 // ── Seeded random ──────────────────────────────────────────────
 function mulberry32(seed) {
@@ -108,15 +110,34 @@ function pickBatch(all, avoid) {
   sessionRound++;
   const seed = parseInt(todayStr().replace(/-/g,''), 10) + sessionRound * 999983;
   const rand = mulberry32(seed);
-  const pool = Array.from({length: all.length}, (_, i) => i).filter(i => !avoid.has(i));
+
+  // Build pool weighted by pass count — always surface least-seen first
+  const pool = all
+    .map((text, i) => ({ i, text, passes: progress[String(i)] || 0 }))
+    .filter(s => !avoid.has(s.i));
   if (!pool.length) return [];
-  for (let i = pool.length - 1; i > 0; i--) {
-    const j = Math.floor(rand() * (i + 1));
-    [pool[i], pool[j]] = [pool[j], pool[i]];
+
+  const shuffle = arr => {
+    for (let i = arr.length - 1; i > 0; i--) {
+      const j = Math.floor(rand() * (i + 1));
+      [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+  };
+
+  // Group by pass count, fill from lowest tier up
+  const byPasses = {};
+  pool.forEach(s => { (byPasses[s.passes] = byPasses[s.passes] || []).push(s); });
+  const tiers = Object.keys(byPasses).map(Number).sort((a, b) => a - b);
+
+  const chosen = [];
+  for (const t of tiers) {
+    if (chosen.length >= N) break;
+    const tier = byPasses[t];
+    shuffle(tier);
+    chosen.push(...tier.slice(0, N - chosen.length));
   }
-  return pool.slice(0, Math.min(N, pool.length))
-    .sort((a, b) => a - b)
-    .map(i => ({i, text: all[i]}));
+
+  return chosen.sort((a, b) => a.i - b.i).map(({ i, text }) => ({ i, text }));
 }
 
 // ── Helpers ────────────────────────────────────────────────────
@@ -168,6 +189,13 @@ async function putFile(path, content, sha, message) {
     body: JSON.stringify(body),
   });
   if (!r.ok) throw new Error((await r.json()).message || `Failed to write ${path}`);
+  return (await r.json()).content.sha;
+}
+
+async function loadProgress() {
+  const { text, sha } = await fetchFile('progress.json');
+  progressSha = sha;
+  try { progress = text ? JSON.parse(text) : {}; } catch(e) { progress = {}; }
 }
 
 async function fetchInbox() {
@@ -210,6 +238,13 @@ async function commitAll() {
     await putFile('rebuild.md', base + additions, rbSha, `Flag for rebuild — ${date}`);
   }
 
+  // 3. Update progress.json — increment pass count for every snippet in this batch
+  picked.forEach(p => {
+    const k = String(p.i);
+    progress[k] = (progress[k] || 0) + 1;
+  });
+  progressSha = await putFile('progress.json', JSON.stringify(progress, null, 2), progressSha, `Progress — ${date}`);
+
   return { edited: picked.filter((p, i) => !flags[i] && edits[i] !== p.text).length, flagged: flagged.length };
 }
 
@@ -250,7 +285,7 @@ function showSnippet() {
 
     <div class="progress">${dots}</div>
 
-    <div class="label">Raw — ${current + 1} of ${picked.length}</div>
+    <div class="label">Raw — ${current + 1} of ${picked.length}${(progress[String(p.i)]||0) > 0 ? `<span class="pass-badge">pass ${(progress[String(p.i)]||0) + 1}</span>` : ''}</div>
     <div class="raw ${isFlagged ? 'is-flagged' : ''}">${esc(p.text)}</div>
 
     <div class="label">${isFlagged ? 'Flagged' : 'Your edit'}</div>
@@ -359,7 +394,7 @@ async function init() {
   if (!getPAT()) { showSetup(); return; }
   render('<div class="center"><h2 style="color:var(--muted);font-size:1rem">Loading…</h2></div>');
   try {
-    const raw = await fetchInbox();
+    const [raw] = await Promise.all([fetchInbox(), loadProgress()]);
     snippets  = parseSnippets(raw);
     if (!snippets.length) throw new Error('inbox.md is empty');
     seenIndices  = new Set();
