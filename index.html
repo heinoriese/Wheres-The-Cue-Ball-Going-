@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Where's The Cue Ball Going?</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- TITLE SCREEN -->
+  <div id="screen-title" class="screen active">
+    <img src="assets/title.jpg" alt="Where's The Cue Ball Going?" class="title-bg">
+    <div class="press-start-overlay">
+      <div class="press-start-btn" id="pressStartBtn">
+        <span class="ps-arrow">&#9664;</span>
+        <span class="ps-text">PRESS START</span>
+        <span class="ps-arrow">&#9654;</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- PLAYER COUNT SELECT -->
+  <div id="screen-playercount" class="screen">
+    <div class="menu-bg"></div>
+    <div class="menu-container">
+      <h1 class="menu-title">HOW MANY PLAYERS?</h1>
+      <div class="player-count-grid">
+        <button class="count-btn" data-count="2">
+          <span class="count-num">2</span>
+          <span class="count-label">PLAYERS</span>
+        </button>
+        <button class="count-btn" data-count="3">
+          <span class="count-num">3</span>
+          <span class="count-label">PLAYERS</span>
+        </button>
+        <button class="count-btn" data-count="4">
+          <span class="count-num">4</span>
+          <span class="count-label">PLAYERS</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- CHARACTER SELECT -->
+  <div id="screen-charselect" class="screen">
+    <div class="menu-bg"></div>
+    <div class="menu-container">
+      <h1 class="menu-title">PLAYER SETUP</h1>
+      <div id="player-cards-container" class="player-cards"></div>
+      <button class="start-game-btn" id="startGameBtn">BREAK!</button>
+    </div>
+  </div>
+
+  <!-- GAME SCREEN -->
+  <div id="screen-game" class="screen">
+    <canvas id="gameCanvas"></canvas>
+    <div id="hud" class="hud">
+      <div id="hud-players" class="hud-players"></div>
+      <div id="hud-current" class="hud-current">
+        <span id="hud-turn-name">Player 1</span>'s Turn
+      </div>
+      <div id="hud-power-bar" class="power-bar-wrap">
+        <div class="power-bar-label">POWER</div>
+        <div class="power-bar-track">
+          <div id="power-bar-fill" class="power-bar-fill"></div>
+        </div>
+      </div>
+    </div>
+    <div id="shot-result" class="shot-result hidden"></div>
+  </div>
+
+  <!-- GAME OVER SCREEN -->
+  <div id="screen-gameover" class="screen">
+    <div class="menu-bg"></div>
+    <div class="menu-container">
+      <h1 class="menu-title">GAME OVER</h1>
+      <div id="final-scoreboard" class="final-scoreboard"></div>
+      <button class="start-game-btn" id="playAgainBtn">PLAY AGAIN</button>
+    </div>
+  </div>
+
+  <script src="js/audio.js"></script>
+  <script src="js/input.js"></script>
+  <script src="js/physics.js"></script>
+  <script src="js/table.js"></script>
+  <script src="js/hud.js"></script>
+  <script src="js/game.js"></script>
+  <script src="js/screens.js"></script>
+</body>
+</html>
