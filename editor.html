@@ -115,6 +115,7 @@ let snippets = [], picked = [], edits = [], flags = [], current = 0;
 let seenIndices = new Set();
 let sessionRound = 0;
 let progress = {}, progressSha = null;
+let draftRestored = false;
 
 // ── Seeded random ──────────────────────────────────────────────
 function mulberry32(seed) {
@@ -151,6 +152,7 @@ function restoreDraft() {
     current      = d.current || 0;
     seenIndices  = new Set(d.seenIndices || []);
     sessionRound = d.sessionRound || 0;
+    draftRestored = true;
     return true;
   } catch(e) { return false; }
 }
@@ -293,6 +295,8 @@ async function commitAll() {
   progressSha = await putFile('progress.json', JSON.stringify(progress, null, 2), progressSha, `Progress — ${date}`);
 
   clearDraft();
+  draftRestored = false;
+  localStorage.setItem('pots_lastCommit', new Date().toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' }));
   return {
     edited:  picked.filter((p, i) => !flags[i] && edits[i] !== p.text).length,
     flagged: flagged.length
@@ -493,6 +497,7 @@ function showSnippet() {
       <div class="project">Parliament of the Snake</div>
       <div class="session-date">${fmtDate(todayStr())}</div>
     </header>
+    ${draftRestored ? `<div style="font-size:0.75rem;color:#c8885e;margin-bottom:1.5rem;padding:0.5rem 0.8rem;border:1px solid #c8885e33;border-radius:4px">● Unsaved draft — these edits haven't been committed to GitHub yet</div>` : ''}
 
     <div class="progress">${dots}</div>
 
@@ -556,9 +561,9 @@ async function doCommit() {
     render(`
       <div class="center">
         <h2 style="color:var(--accent)">Saved.</h2>
-        <p>${edited} edit${edited !== 1 ? 's' : ''} → manuscript-edited.md</p>
+        <p>${edited} edit${edited !== 1 ? 's' : ''} committed to GitHub</p>
         ${flagged ? `<p>${flagged} flagged → rebuild.md</p>` : ''}
-        <p style="margin-top:0.3rem;font-size:0.8rem;color:var(--muted)">${remaining} passages still unseen</p>
+        <p style="margin-top:0.3rem;font-size:0.8rem;color:var(--muted)">${new Date().toLocaleTimeString('en-GB', {hour:'2-digit',minute:'2-digit'})} · ${remaining} passages still unseen</p>
         <div style="display:flex;gap:1rem;justify-content:center;margin-top:2rem">
           <button onclick="keepGoing()">Keep going →</button>
           <button style="color:var(--muted)">Done for now</button>
