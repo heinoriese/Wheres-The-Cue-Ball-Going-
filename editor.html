@@ -266,19 +266,22 @@ function parseSnippets(text) {
 }
 
 // ── Commit ─────────────────────────────────────────────────────
-async function commitAll() {
-  const date = todayStr();
+async function commitAll(upTo) {
+  const date  = todayStr();
+  const batch = picked.slice(0, upTo);
+  const bEdits = edits.slice(0, upTo);
+  const bFlags = flags.slice(0, upTo);
 
   let { text: msText, sha: msSha } = await fetchFile('manuscript-edited.md');
   let ms = msText ? parseSnippets(msText) : snippets.slice();
-  picked.forEach((p, i) => {
-    if (!flags[i] && p.i < ms.length) ms[p.i] = edits[i];
+  batch.forEach((p, i) => {
+    if (!bFlags[i] && p.i < ms.length) ms[p.i] = bEdits[i];
   });
   const msOut = '# Parliament of the Snake — Edited Manuscript\n\n---\n\n' +
     ms.join('\n\n---\n\n') + '\n\n---\n';
   await putFile('manuscript-edited.md', msOut, msSha, `Edit — ${date}`);
 
-  const flagged = picked.filter((_, i) => flags[i]);
+  const flagged = batch.filter((_, i) => bFlags[i]);
   if (flagged.length) {
     let { text: rbText, sha: rbSha } = await fetchFile('rebuild.md');
     const base = rbText || '# Rebuild List\n\nPassages flagged for structural work.\n';
@@ -288,7 +291,7 @@ async function commitAll() {
     await putFile('rebuild.md', base + additions, rbSha, `Flag for rebuild — ${date}`);
   }
 
-  picked.forEach(p => {
+  batch.forEach(p => {
     const k = String(p.i);
     progress[k] = (progress[k] || 0) + 1;
   });
@@ -298,7 +301,7 @@ async function commitAll() {
   draftRestored = false;
   localStorage.setItem('pots_lastCommit', new Date().toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' }));
   return {
-    edited:  picked.filter((p, i) => !flags[i] && edits[i] !== p.text).length,
+    edited:  batch.filter((p, i) => !bFlags[i] && bEdits[i] !== p.text).length,
     flagged: flagged.length
   };
 }
@@ -514,9 +517,8 @@ function showSnippet() {
       </button>
       <button class="retire-btn" id="retire-btn" onclick="doRetire(${p.i})">✓ Done</button>
       <div class="spacer"></div>
-      ${isLast
-        ? `<button class="primary" onclick="doCommit()">Commit ↗</button>`
-        : `<button class="primary" onclick="goTo(${current + 1})">Next →</button>`}
+      <button onclick="doCommit()">Commit ↗</button>
+      ${!isLast ? `<button class="primary" onclick="goTo(${current + 1})">Next →</button>` : ''}
     </div>`);
 
   if (!isFlagged) {
@@ -555,7 +557,7 @@ async function doCommit() {
   saveEdit();
   render('<div class="center"><h2 style="color:var(--muted);font-size:1rem">Saving…</h2></div>');
   try {
-    const { edited, flagged } = await commitAll();
+    const { edited, flagged } = await commitAll(current + 1);
     const retiredCount = (progress.retired || []).length;
     const remaining    = snippets.length - seenIndices.size - retiredCount;
     render(`
@@ -566,7 +568,7 @@ async function doCommit() {
         <p style="margin-top:0.3rem;font-size:0.8rem;color:var(--muted)">${new Date().toLocaleTimeString('en-GB', {hour:'2-digit',minute:'2-digit'})} · ${remaining} passages still unseen</p>
         <div style="display:flex;gap:1rem;justify-content:center;margin-top:2rem">
           <button onclick="keepGoing()">Keep going →</button>
-          <button style="color:var(--muted)">Done for now</button>
+          <button style="color:var(--muted)">Happy</button>
         </div>
       </div>`);
   } catch (e) {
