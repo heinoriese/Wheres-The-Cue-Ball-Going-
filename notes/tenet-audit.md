@@ -19,8 +19,11 @@ The evidence is all on the page — showing his pass to a dead camera (53), the 
 **5. Music carries the friendships** → [tenets/music-friendship.md](tenets/music-friendship.md)
 Music soundtracks every John/Reza logistical scene but is silent in all four of their emotional peaks (bunk-bed, violinist reveal, hand-holding, pub chase). No song recurs between them, and the concert-violinist reveal (530) currently explains only Reza's accent. Meanwhile music-vs-Harmony opposition is implicit five times and never cashed. Five fixes, all one-to-three lines: a recurring song (The Passenger, 224 → 496), Reza humming something bowed in the bunk-bed dark, a hummed callback at the hand-holding, "You can pick the music" as the book's last friendship line (623), and — the big one — Reza's illegal banger clicking on in the dead silence after the Harmony hum stops (595).
 
-**6. IT = the Pulpos brain in a tank** → PENDING
-The auditor completed its research (It/Baker possession references, Pulpos thread, number-string inventory for the cipher, H'gok rewrite map) but hit a usage limit before writing the report. Re-run scheduled.
+**6. IT = the Pulpos brain in a tank** → [tenets/it-brain-tank.md](tenets/it-brain-tank.md)
+The manuscript is astonishingly ready for this rewrite — snippet 508 already canonizes it ("We got rid of the Pulpos." / "You caused the Pulpos." / "A necessary test."), the ThinkTank is never physically shown (a clean slot for the tank), and Baker's ceiling-crawl is already octopus body-horror. The cipher decodes as A1Z26 ("Behold It") and the audit found an escalation arc from BEHOLD ME to IT IS OMNIPOTENT IT IS HERE (posted 8 times the moment before Julie is removed from the group chat) — plus three encoding typos to fix (62, 106, 124) and one corrupted block to re-encode (98). Full verbatim number-string inventory included.
+
+**7. Main-characterness (Erica → John; Vetko wants it; Palm knows)** → PENDING
+Audit running: where the power visibly operates, Palm's uncanniness inventory, traces of the transfer at Erica's death, whether the rooftop reads as Vetko locating the mantle. Constraint applied: hints and weirdness only — no payoff in this book (prequel: the Raven/Beck Avon and Doug Goode; meta pays off in book three).
 
 ## The cross-tenet pattern
 
