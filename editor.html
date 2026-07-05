@@ -2,8 +2,15 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Daily Edit — Parliament of the Snake</title>
+  <meta name="theme-color" content="#111111">
+  <link rel="manifest" href="manifest.webmanifest">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Daily Edit">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="icon" href="icon-192.png">
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
@@ -653,6 +660,7 @@ function loadSpecific(i) {
 
 async function doCommit() {
   saveEdit();
+  saveDraft(); // persist locally before any network attempt, so nothing is lost offline
   render('<div class="center"><h2 style="color:var(--muted);font-size:1rem">Saving…</h2></div>');
   try {
     const { edited, flagged } = await commitAll(current + 1);
@@ -670,6 +678,21 @@ async function doCommit() {
         </div>
       </div>`);
   } catch (e) {
+    const offline = !navigator.onLine || e instanceof TypeError ||
+                    /Failed to fetch|NetworkError|Load failed|network/i.test(e.message);
+    if (offline) {
+      render(`
+        <div class="center">
+          <h2 style="color:#c8885e">You're offline</h2>
+          <p>Your edits are saved on this device.</p>
+          <p style="font-size:0.8rem;color:var(--muted)">Commit them when you're back online — nothing is lost.</p>
+          <div style="display:flex;gap:1rem;justify-content:center;margin-top:1.5rem">
+            <button onclick="doCommit()">Try again</button>
+            <button onclick="showSnippet()">Keep editing</button>
+          </div>
+        </div>`);
+      return;
+    }
     const isAuth = /401|credential|token/i.test(e.message);
     render(`
       <div class="center">
@@ -735,6 +758,10 @@ async function init() {
         <button onclick="init()" style="margin-top:1.5rem">Retry</button>
       </div>`);
   }
+}
+
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('sw.js').catch(() => {});
 }
 
 init();
