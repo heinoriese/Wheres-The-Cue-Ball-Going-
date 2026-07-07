@@ -545,6 +545,45 @@ function runFind(e) {
     `<div style="color:var(--muted);padding:1rem 0">No matches.</div>`;
 }
 
+// ── Greeting (shown once per app open) ─────────────────────────
+let greetHtml = '';
+
+const KICKS = [
+  'Write something, you cunt.',
+  'Five snippets. Then you can go back to being useless.',
+  'This isn&rsquo;t going to edit itself. Unlike you, it has standards.',
+  'Doom-scroll later. Book now.',
+  'You wrote a whole novel and you&rsquo;re scared of one sentence? Coward.',
+  'The oven&rsquo;s still on. Go turn it off.',
+  'Nobody&rsquo;s coming to finish this for you. Just you, pal.',
+  'One good sentence and you&rsquo;re allowed to feel smug. Go earn it.',
+  'Stop reading this and edit something, you magnificent procrastinator.',
+  'Put the phone down. No &mdash; the phone IS the thing. Edit, you berk.',
+];
+
+// Your own lines the reader panel singled out. Proof you can do this.
+const GOODLINES = [
+  '&hellip;battling with the encroaching sunset for who was the more impressively amber bastard.',
+  'It feels like putting your cock in a blender and being surprised that it hurts.',
+  'She laid her head back, put a hand on the stone&hellip; and remembered her dog for a bit.',
+  '&hellip;was a lot more than angry and very in love, saw a whale, punched a gropey arsehole in a pub&hellip;',
+  'When he spoke, clipped and forceful his voice was gravel, deep, thick and low with a hint of cockney.',
+];
+
+function pickGreeting() {
+  const r = Math.floor((Date.now() / 1000)) % 5; // varies per open without Math.random
+  if (r < 2) {
+    const line = GOODLINES[Math.floor(Date.now() / 1000) % GOODLINES.length];
+    return `<div style="margin-bottom:1.6rem;padding:0.9rem 1.1rem;border:1px solid #c8a96e33;border-radius:6px;background:#c8a96e0d">
+      <div style="font-size:0.62rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);margin-bottom:0.5rem">You wrote this</div>
+      <div style="font-style:italic;color:var(--text)">&ldquo;${line}&rdquo;</div>
+      <div style="font-size:0.72rem;color:var(--accent);margin-top:0.6rem">Now do that again. Go.</div>
+    </div>`;
+  }
+  const kick = KICKS[Math.floor(Date.now() / 1000) % KICKS.length];
+  return `<div style="margin-bottom:1.6rem;padding:0.9rem 1.1rem;border-left:3px solid var(--accent);color:var(--text);font-style:italic;font-size:1.05rem">${kick}</div>`;
+}
+
 // ── Render ─────────────────────────────────────────────────────
 const app = document.getElementById('app');
 function render(html) { app.innerHTML = html; }
@@ -591,6 +630,7 @@ function showSnippet() {
       <div class="project">Parliament of the Snake</div>
       <div class="session-date">${fmtDate(todayStr())}</div>
     </header>
+    ${greetHtml}
     ${draftRestored ? `<div style="font-size:0.75rem;color:#c8885e;margin-bottom:1.5rem;padding:0.5rem 0.8rem;border:1px solid #c8885e33;border-radius:4px">● Unsaved draft — these edits haven't been committed to GitHub yet</div>` : ''}
 
     <div class="progress">${dots}</div>
@@ -611,6 +651,8 @@ function showSnippet() {
       <button onclick="doCommit()">Commit ↗</button>
       ${!isLast ? `<button class="primary" onclick="goTo(${current + 1})">Next →</button>` : ''}
     </div>`);
+
+  greetHtml = ''; // show the greeting only on the first snippet after opening
 
   if (!isFlagged) {
     const ta = document.getElementById('edit-area');
@@ -743,6 +785,7 @@ async function init() {
     if (!snippets.length) throw new Error('inbox.md is empty');
     await loadManuscriptEdited();
     flagSet = new Set(progress.flagged || []);
+    greetHtml = pickGreeting();
     if (restoreDraft()) {
       showSnippet();
     } else {
