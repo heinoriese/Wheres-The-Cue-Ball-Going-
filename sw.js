@@ -1,7 +1,7 @@
 // Parliament of the Snake — Daily Edit · service worker
 // Shell loads instantly & offline; manuscript data is network-first with an
 // offline cache fallback. Commits (PUTs) always go straight to the network.
-const CACHE = 'pots-v1';
+const CACHE = 'pots-v2';
 const SHELL = [
   './editor.html',
   './manifest.webmanifest',

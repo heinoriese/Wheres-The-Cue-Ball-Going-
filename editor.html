@@ -568,20 +568,21 @@ const GOODLINES = [
   'She laid her head back, put a hand on the stone&hellip; and remembered her dog for a bit.',
   '&hellip;was a lot more than angry and very in love, saw a whale, punched a gropey arsehole in a pub&hellip;',
   'When he spoke, clipped and forceful his voice was gravel, deep, thick and low with a hint of cockney.',
+  '&ldquo;I think you&rsquo;ve forgotten who I am.&rdquo;',
+  'a spark, some hint of something other than violence &mdash; &ldquo;You&rsquo;re only fucking here.&rdquo;',
 ];
 
+const rand = arr => arr[Math.floor(Math.random() * arr.length)];
+
 function pickGreeting() {
-  const r = Math.floor((Date.now() / 1000)) % 5; // varies per open without Math.random
-  if (r < 2) {
-    const line = GOODLINES[Math.floor(Date.now() / 1000) % GOODLINES.length];
+  if (Math.random() < 0.5) {
     return `<div style="margin-bottom:1.6rem;padding:0.9rem 1.1rem;border:1px solid #c8a96e33;border-radius:6px;background:#c8a96e0d">
       <div style="font-size:0.62rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);margin-bottom:0.5rem">You wrote this</div>
-      <div style="font-style:italic;color:var(--text)">&ldquo;${line}&rdquo;</div>
+      <div style="font-style:italic;color:var(--text)">&ldquo;${rand(GOODLINES)}&rdquo;</div>
       <div style="font-size:0.72rem;color:var(--accent);margin-top:0.6rem">Now do that again. Go.</div>
     </div>`;
   }
-  const kick = KICKS[Math.floor(Date.now() / 1000) % KICKS.length];
-  return `<div style="margin-bottom:1.6rem;padding:0.9rem 1.1rem;border-left:3px solid var(--accent);color:var(--text);font-style:italic;font-size:1.05rem">${kick}</div>`;
+  return `<div style="margin-bottom:1.6rem;padding:0.9rem 1.1rem;border-left:3px solid var(--accent);color:var(--text);font-style:italic;font-size:1.05rem">${rand(KICKS)}</div>`;
 }
 
 // ── Render ─────────────────────────────────────────────────────
