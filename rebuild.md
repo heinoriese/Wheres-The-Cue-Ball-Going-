@@ -49,3 +49,26 @@ The ringing was no longer a sound but a feeling, a sensation, a deep piercing sc
 **Snippet 546**
 
 That type of thing ” Baker had the air of a petulant child “You don 't understand, when you left, when Sergey, well Sergey, it was all I had left, and it spoke to me and it told me what to do and It has a plan, just come with me ” he pointed up at the Central Node “Come with me and see what It can do. ”  Vetko held up a hand to silence him, he felt the weight of the picture in his grasp “I don 't care whats in there. Nothing is about anything but me. All you had to do was not lose control ” he threw the picture at Baker, it zipped past his head and shattered against the wall behind him “Ian, why is there rioting in my Residential Zones? Ian, why have you been pissing about with sound waves while my country is falling apart? Who are these cunts in your prison taking her name in vain? ” his voice rose with that, a sudden crashing crest of an unseen tsunami. Baker shrank back hands raised. “I can explain if you will just listen to It- ”  “You 've been playing God while I 've been gone. Remember who you work for.
+---
+
+**Snippet 62**
+
+Addition somewhere - Jan Jan and Jane were talking about it     09:28 HANNAH: @Naj You just bake it for 20 minutes once you 've put the soil in and its lovely  09:28 NAJ: Ah, ah, can 't wait to try it. Did you say you 've got a link for the recipe?  09:28 HANNAH: I 've got a visit permit spare if you want me to show you?  09:28 +258151241020: Rajma Dupiaza 'A319.21 Forged of kidney beans, seasoned of green, consume it. Papta Ma Gosht 'A32.13 Roiling with ginger, imbibe of its power. Garlic Bahare 'A39.20 Birds suffocated in fresh produce, attain its scent. Paneer Balti 'A320.15 It has harvested the cheese for your sustenance. Lamb Almashiki 'A39.20 Of lamb, of wool it is wrought, behold its blend of spices.  09:29 +258151241020: Rajma Dupiaza 'A319.21 Forged of kidney beans, seasoned of green, consume it. Papta Ma Gosht 'A32.13 Roiling with ginger, imbibe of its power. Garlic Bahare 'A39.20 Birds suffocated in fresh produce, attain its scent. Paneer Balti 'A320.15 It has harvested the cheese for your sustenance.
+
+---
+
+**Snippet 135**
+
+And what about cancer. He might have cancer. He was sure he had cancer. P of D a million. A solid bloody million. Maybe Jones being here wasn 't a great idea, what with her criminal tendencies. “-at least it wasn 't Crows, because Crows don 't exist- ”  John brushed his teeth, badly. Time to go get blown up you pasty piece of shit. “Radio off ” He knocked on the spare bedroom door on his way downstairs. “Oi. ”  “Mmmmmph. ”   “I 'm going to work. Powers on after eleven if you want toast. ”  “Mmmph ” No chance she 'd be feeling half as rough as him, Jones was 40% wine at any given moment. He patted his back pocket, grabbed his Denman and Howe waterproof, checked the plugs, locked, unlocked, locked, unlocked then locked the door and was violently sick into a plant pot. Seagulls cawed obscenities at him. Fuck you John Blard, they said. We 're going to shit on your head when you get hit by a car. Street cleaners roamed the estate with Remisters today, spraying disinfectant up the side of buildings and all over the roads. The Checkpoint had someone in it for once, she was currently otherwise occupied by a bacon sandwich.
+
+---
+
+**Snippet 494**
+
+FOR YOUR OWN SAFETY. ”  He fumbled in his bag for one of the fake IDs, dropped three then produced one for the scanner “See I 'm ” shit “Tina Gates, Residential Zone 12. ”  A beam sprang out of the Five Eyes, scanning the card, then John. “TINA GATES. REMOVE YOUR MASK FOR IDENTIFICATION. ”   “I 'd really rather not. ”  A disc opened on the top of the drone and a crackling stun rod slid out “CITIZEN. YOU ARE SUSPECTED OF IMPERSONATING TINA GATES. ”   “I 'll take that. ”  “UNIDENTIFIED CITIZEN. YOU WILL BE SHOCKED AND DETAINED FOR YOUR SAF- ” the Drone zizzed backwards as John punched it square in the eye and turned to sprint, already nursing his probably broken hand, definitely broken hand why would he punch a solid metal object its definitely definitely broken. Fling self through open door. Apologise to startled night shift workers only just having their microwave TV dinner. Out back door into tiny strip of garden, over fence, over fence, can 't climb fence, jump on plastic kids car over fence. Pause. Pause. Take stock. Behind him the Five Eyes buzzed around the house, a dragonfly trapped in a tumbler.
+
+---
+
+**Snippet 628**
+
+Just accept the beauty of the obviously good things     JONES   No fuck you people standing up for what they believe in is beautiful     Then talk to.me about her. I can't. It's probably better if you go    You can't keep her to yourself Blard. It'll eat you alive. I don't have a choice. Poor man didn't know he was haunted. Tumtum  What does it mean to be a tumtum? Secret handshakes? No we do stuff  What like hang out in this garage? Nimbys  When we did it was fine, but now someone else is doing the same thing, but different, well that just isn't fine Small German man with no arms  We call him hans     While  She was alive I could never have had a relationship with anyone else, not a serious one, that's why I avoided them     Now she's dead? Now she's dead I don't want anyone else     Fucker     Yep
