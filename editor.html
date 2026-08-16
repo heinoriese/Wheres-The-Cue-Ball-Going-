@@ -391,8 +391,10 @@ async function doRetire(snippetIndex) {
 // ── Stats ──────────────────────────────────────────────────────
 function showStats() {
   const retired     = new Set(progress.retired || []);
+  const flagged     = new Set(progress.flagged || []);
   const total       = snippets.length;
   const retiredCount = retired.size;
+  const flaggedCount = [...flagged].filter(i => !retired.has(i)).length;
   const active      = total - retiredCount;
 
   const passCounts = {};
@@ -420,10 +422,17 @@ function showStats() {
         <span style="color:var(--accent)">${count}</span>
       </div>`);
   }
+  if (flaggedCount) {
+    distRows.push(`
+      <div style="display:flex;justify-content:space-between;padding:0.35rem 0;border-bottom:1px solid var(--border)">
+        <span style="color:var(--flag)">🚩 Flagged for rebuild</span>
+        <span style="color:var(--flag)">${flaggedCount}</span>
+      </div>`);
+  }
   if (retiredCount) {
     distRows.push(`
       <div style="display:flex;justify-content:space-between;padding:0.35rem 0;border-bottom:1px solid var(--border)">
-        <span style="color:var(--muted)">Retired (done forever)</span>
+        <span style="color:var(--muted)">✓ Retired (done forever)</span>
         <span style="color:var(--muted)">${retiredCount}</span>
       </div>`);
   }
