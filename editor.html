@@ -709,6 +709,19 @@ async function doCommit() {
     const { edited, flagged } = await commitAll(current + 1);
     const retiredCount = (progress.retired || []).length;
     const remaining    = snippets.length - seenIndices.size - retiredCount;
+    if (edited === 0 && flagged === 0) {
+      render(`
+        <div class="center">
+          <h2 style="color:#c8885e">Nothing to save</h2>
+          <p>This passage hasn't been changed from what's already stored.</p>
+          <p style="font-size:0.8rem;color:var(--muted)">If you meant to edit it, go back and type in the box, then Commit.</p>
+          <div style="display:flex;gap:1rem;justify-content:center;margin-top:1.8rem">
+            <button class="primary" onclick="showSnippet()">← Back to this passage</button>
+            <button onclick="keepGoing()">Skip it</button>
+          </div>
+        </div>`);
+      return;
+    }
     render(`
       <div class="center">
         <h2 style="color:var(--accent)">Saved.</h2>
