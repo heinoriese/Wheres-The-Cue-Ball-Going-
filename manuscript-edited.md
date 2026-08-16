@@ -782,7 +782,7 @@ In the corner a shape was breathing, in out in out, thum thum thum thum. As her 
 
 ---
 
-Don 't go anywhere Hard hat man, its nice and cosy in here “Right. Right. Matthews grab me that first aid kit from the front lad, yeah yeah peace and love peace and love bye bye bye bye ” he clopped the phone shut. What a satisfying noise, Jones smiled herself a lovely warm smile. Clop. Lovely clip clap clop clop. Hard Hat man put his arms around her and lifted her out of her cosy van bed, the world reeled as her sat against the wheel, his face coming in and out of focus. Somewhere far far away she felt sick, and weak, and so so sleepy. She slipped as he propped her up, but Matthews caught her and held her whilst Hard Hat tipped something horrible smelling onto a rag he 'd got from the first aid kit. “I 'm awful sorry about this really. Nothing personal just following my orders. Its just like going to sleep I 'm told, don 't you worry.
+Don 't go anywhere Hard hat man, its nice and cosy in here “Right. Right. Matthews grab me that first aid kit from the front lad, yeah yeah peace and love peace and love bye bye bye bye ” he clopped the phone shut. What a satisfying noise, Jones smiled herself a lovely warm squiggly smile. Clop. Clip clap clop clop. Hard Hat man grabbed her shoulders and hoisted her out of her cosy van bed, the world reeled as she sat against the wheel, his face coming in and out of focus. Somewhere far far away she felt sick, and weak, and so so sleepy. She slipped as he propped her up, Matthews held her whilst Hard Hat tipped something horrible smelling onto a rag he'd got from the first aid kit. “I 'm awful sorry about this really. Nothing personal. Its just like going to sleep I 'm told, don 't you worry.
 
 ---
 
