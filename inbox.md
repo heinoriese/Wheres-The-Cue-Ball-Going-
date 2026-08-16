@@ -2557,3 +2557,5 @@ John no go home because evan tells him about jones, plus hes scared they 'll kno
 Slogans  No independence, a government owned everything  Thin veneer of anything else. The country is cut off. Harmony - Programming Peace. SUSPICIONS  Chubby beginning, might need to lose a full day? So one of each scene really. I like them because it gives you a chance to care about Jones and the other characters, but it means it doesn 't truly get going til later. The Elleray Palm stuff, is that enough of a hook? CODE  Behold It 2 5 8 15 12 4 9 20
 
 ---
+---
+Maybe the Technomancers,  out there somewhere,  playing PS3s and listening to Kasabian.
