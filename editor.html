@@ -662,6 +662,9 @@ function showSnippet() {
       saveDraft();
       showWcDelta();
     });
+    // Lock the text in the instant focus leaves (e.g. tapping Commit on mobile),
+    // before any other handler runs — so an edit is never lost to a race.
+    ta.addEventListener('blur', () => { edits[current] = ta.value; saveDraft(); });
     showWcDelta();
   }
 }
