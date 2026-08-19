@@ -2559,3 +2559,5 @@ Slogans  No independence, a government owned everything  Thin veneer of anything
 ---
 ---
 Maybe the Technomancers,  out there somewhere,  playing PS3s and listening to Kasabian.
+---
+It was the 17th of December 1998 again, and winter bit hard on the ninth time around.
