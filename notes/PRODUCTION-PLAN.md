@@ -1,115 +1,130 @@
 # Production Plan — finishing Parliament of the Snake
 
-The whole book-to-published job as an ordered checklist. Work top to bottom. Never decide what to do next — just do the next unchecked box. Each pass is a different *kind* of work, so you're never mixing "fiddly" with "creative."
+The whole book-to-published job as an ordered checklist. Work top to bottom. Never decide what to do next — just do the next unchecked box. Each pass is a different *kind* of work, so you're never mixing fiddly with creative. Every task below says exactly what it is — no codes, no looking anything up.
 
-**Canonical copy:** work from `manuscript-edited.md` (has your latest app edits) pulled into Scrivener. Forget reconciling the old Scrivener draft — bin the divergence, don't spend willpower on it.
-
----
-
-## PASS 0 — Decisions (no writing, ~1 sitting)
-Settle the forks that everything else depends on. These are choices, not prose. Answer each once, write the answer here, never argue it again.
-
-- [ ] **Doug Goode on the page — cut or keep?** Your Jan 2026 note says his real past is *prequel-only*, but 2023 notes drafted Doug Goode confrontation scenes for this book. Decide: any such scenes get cut/deferred. (This gates Pass 5.)
-- [ ] **The Pulpos / Erica timeline.** Notes place the Pulpos both after her death (2023) and before/during it (2025). Pick one — it has to square with when the ThinkTank/brain existed.
-- [ ] **Baker's death — pick one.** He currently dies three ways across notes (eaten / shot / knifed). Choose.
-- [ ] **The frozen year.** Drifted 1992 → 2000 → "monoculture fracture." Lock one.
-- [ ] **Reza's age** (fixes continuity E2 below) — decide it, everything else follows.
-- [ ] **National zone count** (fixes E5) — one number.
-- [ ] **Julie's fate is singular:** captured & mind-blown, held in the van (your April 2025 version). Confirm and kill the other three.
+**Which file is the real one:** work from `manuscript-edited.md` (it has your latest app edits) pulled into Scrivener. Don't try to reconcile the old Scrivener draft with it — just abandon the old one and carry on from this.
 
 ---
 
-## PASS 1 — Mechanical cleanup (low-willpower, high-tidiness — do when tired)
-Find-and-replace and deletions. No creativity required. Great for building momentum on a bad day.
+## PASS 0 — Decisions (no writing, one sitting)
+Settle the forks everything else depends on. These are choices, not prose. Answer each once, write the answer down, never argue it again.
 
-**Just fix (settled):**
-- [ ] Delta **Isol** everywhere (kill "Ilos" at 295/341/423)
-- [ ] Mad O'Toole — pick Peter or Paul, one throughout (E9)
-- [ ] Felicity — one surname (E10)
-- [ ] "Red Cloaks" or "Red Coats" — one (E11)
-- [ ] "Cloudtop View / Cloudtop Neighbourhood Watch" throughout (kill "Cloudtop Hill", "Hill Top") (E12)
-- [ ] "Constabulary" (fix "Contabulary", 16) (E24)
-- [ ] Freezing **July** → fix the month (E16)
-- [ ] Granville **Road** (not Lane) (E17); Larkin Street vs Avenue — one (E18)
-- [ ] Sugar Ray vs Bryan Ferry — align (E25)
-- [ ] "kukris" spelling consistent (E27)
-- [ ] Naj vs Anaj Goldblum — distinguish husband/widow (E15)
-- [ ] Fix the estate "four roads" count (Derek Avenue is a fifth) (E18)
-- [ ] Meeting Room 3 vs 5 (E19)
-
-**Apply the Pass-0 decisions:**
-- [ ] Reza age line(s) (E2), era arithmetic (E3), zone count + code spacing (E5), Brogue 22-vs-99 days (E1), population 40% vs third (E4), PZ12/RZ12 (E6), Tina alive/dead (E13)
-
-**Delete / repair:**
-- [ ] The Austin Montego that both never leaves and blows up (E14)
-- [ ] Points/fine bookkeeping consistency (E20, E21); "last night"→"today" (E22); spam-bot removed-twice (E23)
-- [ ] Ethel's phantom third blade (E27)
-- [ ] Strip the RTF artifacts (spaces before apostrophes/quotes) — one regex pass
-- [ ] Delete the stray editing timestamp mid-prose (~163) and the ALL-CAPS author note (~271–272)
-- [ ] Quarantine the scratch notes at the end (~625–638) — they're not manuscript
-- [ ] Cipher typos: fix "BEHOLD JT"→IT (62), WITNESSED (106), OMNIPOTENT (124), re-encode the garbled block (98)
+- [ ] **Doug Goode on the page — cut him or keep him?** Your latest note (Jan 2026) says John's real past as Doug Goode / the Raven is *prequel-only*. But your 2023 notes drafted actual Doug Goode confrontation scenes for *this* book. Decide: those scenes get cut or moved to the prequel. (This decision controls the big rewrites in Pass 5.)
+- [ ] **When did the Pulpos (octopus) thing happen — before or after Erica's death?** Your notes place it both ways. Pick one, and make sure it fits when the ThinkTank/brain existed.
+- [ ] **How does Baker die?** Right now your notes kill him three different ways — eaten, shot, and knifed. Choose one.
+- [ ] **What year is the country frozen in?** It's drifted across notes from 1992 to 2000 to a vaguer "monoculture fracture." Lock one answer.
+- [ ] **How old is Reza?** (Fixes the age contradiction in Pass 1.) The maths currently makes him both ~19 and ~50. Decide his real age; everything else follows from it.
+- [ ] **How many Residential Zones are there?** The book says 42 in one place and at least 88 in another. Pick one number.
+- [ ] **Julie's fate — lock the single version:** she fought back, the sound-entity fried her mind, and she's held unconscious in a van (your April 2025 version). Confirm this and delete the other three versions floating in your notes.
 
 ---
 
-## PASS 2 — The quip cull (one discipline sweep)
-Removal only. Work the `quip-kill-list.md`: **28 KILL, 9 MOVE.** The rule: joke before the feeling works, joke on/after the feeling kills it. Top three: 78, 557, 596. Don't add anything — just cut/relocate.
+## PASS 1 — Fix the mistakes (low-brain, satisfying — do this when you're tired)
+Pure find-and-replace and small corrections. No creativity needed. Perfect for a bad day — you just cross off wrongness.
 
-- [ ] Work the kill-list top to bottom
-- [ ] The one exception you choose to keep: Jones's *"I thought there would be more"* — your own note says whisper it, don't cut it.
+**Names spelled two ways — pick one and make it consistent everywhere:**
+- [ ] **Delta's surname:** it's "Isol" in most places and "Ilos" in a few. Make it **Isol** throughout.
+- [ ] **Mad O'Toole's first name:** he's "Peter" in some scenes and "Paul" in others. Pick one (watch out — a *Paul* O'Toole clashes with the dead character Paul Bond).
+- [ ] **Felicity's surname:** she's "Felicity Scrope" and then "Felicity Carter" two sentences later. One surname.
+- [ ] **The soldiers' uniforms:** "Red Coats" in some battle lines, "Red Cloaks" in others. Same faction — pick one word.
+- [ ] **The neighbourhood:** "Cloudtop View" everywhere except a couple of stray "Cloudtop Hill" / "Hill Top" leftovers from an old draft. Make it all **Cloudtop View**.
+- [ ] **"Contabulary"** — typo for **Constabulary** (correct everywhere else).
+- [ ] **The Goldblums:** the living Watch member "Naj" and the bereaved widow "Anaj Goldblum" have their names muddled/swapped. Give the dead husband and the widow clearly different names.
+- [ ] **Ethel's blade:** it's spelled "kukris" once and "Khukri" elsewhere — one spelling.
+- [ ] **The music playing:** dialogue says Sugar Ray, the next line says "Brian Ferry" — pick one (and if it's Ferry, it's *Bryan*).
 
----
+**Numbers and facts that contradict each other — reconcile them:**
+- [ ] **Cesira Brogue was in power for how long?** "22 days" in one place, "99 days" in another. One number.
+- [ ] **Reza's age** — apply your Pass 0 decision; fix the "nine when the Tumult hit" line or the "I've got fifteen years on you" line so they agree.
+- [ ] **How long ago the Tumult / Vetko's rise was** — the arithmetic drifts by a year or two between mentions. Nail one timeline.
+- [ ] **How many people died** — "forty percent" of the population in one place, "a third" in another. One figure.
+- [ ] **Zone count** — apply your Pass 0 number (42 vs 88); also standardise the spacing in zone codes ("RZ1" vs "RZ 88").
+- [ ] **The crisp-factory octopus incident** — it's "PZ12" once and "RZ12" another (and John's fake ID is also Zone 12). Line up the prefix.
+- [ ] **Is Tina Bond alive (and a suspect) or dead?** The book currently implies both. Decide.
+- [ ] **The fine amount:** Jones expects to be "three hundred quid poorer" but the drone fines her "ONE HUNDRED POUNDS." Reconcile, or have her notice the discrepancy.
+- [ ] **The points system:** it's tracked "for the month" in one place and "THIS POINTS QUARTER" in another; "two infractions in 24 hours" vs her own "two in a week." State the rules once and keep them consistent.
+- [ ] **The TumTum cell headcount:** "bloody five of them" vs John's "six was all you could manage?" for the same group. If Jemima arrives late, show her arriving.
+- [ ] **Where the ThinkTank / Harmony physically is** — it's described as being in the "MoM," the "Ministry of Peace," and "The Madhouse." Pick one building and one name for it.
 
-## PASS 3 — The gap sentences (you write these — 8 small ones)
-One sentence each, dropped into a scene that already exists. From `tenet-gaps.md`. LEGIBLE = let it land; DENIABLE = under-plant.
+**Things that physically don't add up — repair them:**
+- [ ] **The estate has "four roads" but five are named** (Derek Avenue is the fifth, and it's where both Jones and John live). Fix the count. Also "Larkin Street" vs "Larkin Avenue" — pick one.
+- [ ] **The month:** one line says "the freezing cold of July," the next line (same walk) describes autumn leaves and the first frost of winter. Fix the season.
+- [ ] **Granville Road vs Granville Lane** — both appear in the same paragraph. Use Granville Road.
+- [ ] **The meeting room:** the reminder says Room 5, the scene is in Room 5, but John walks to "Meeting Room 3." Fix the 3.
+- [ ] **The Austin Montego** breaks down and "never leaves" — then later gets blown up. Pick one fate for the car (or rename the car that explodes).
+- [ ] **Ethel's third knife:** she's introduced with "a knife in either hand," both knives get used on two drones, then she "two-handed" plunges a *third* blade into a third drone. Either give her the extra knife up front or show her draw it.
+- [ ] **"Last night" that was actually this afternoon:** Jones's run-in with the drones happens around 1–2pm, comms come back at 7pm, but at the 7:15 meeting she calls it "last night." Change it to "today," or add a day break.
+- [ ] **The spam bot gets removed from the group chat twice** with no rejoin shown in between. Cut the extra removal — or show it rejoining (funnier).
 
-- [ ] **Vetko = fear of death** (LEGIBLE) — the motive line, in his mouth or the narrator. *The spine. Do this one first.*
-- [ ] Dystopia incompetence tied to the blimp exit (LEGIBLE) — but per your own note, make it *boredom/disdain*, not "beaten by forms"
-- [ ] John hides because of what he knows (DENIABLE) — the *"only John and Vetko know the truth"* tell
-- [ ] The Raven/Erica hair detail (DENIABLE)
-- [ ] The mantle-transfer trace in John's grief (DENIABLE)
-- [ ] Music in the silence after Harmony dies (LEGIBLE)
-- [ ] Vetko's early impossibility as folklore (DENIABLE) — plus soften one of the two "scene/next bit" tells
-- [ ] One main-characterness crowd-bend beat + Palm inspecting not adoring (DENIABLE — pick one or two, not all)
-
----
-
-## PASS 4 — Scene merges & cuts (structural, in Scrivener)
-The heavier surgery. From `repetition-report.md`, the roundup's decided-but-unexecuted cuts, and the reader panel.
-
-- [ ] **John's mornings/commutes** — collapse the repeated ones to: one canonical morning, one broken-routine morning; strip re-described furniture from the rest (49-61, 70-71, 131-142, 203-208, 214-219)
-- [ ] **Govchat transcripts** — merge the two morning-after chats into one; merge recruitment/vetting chats into one
-- [ ] **Julie's bat backstory** — tell once; **two early silent-door visits** — one visit
-- [ ] **Crows/Raven explainer twins** — cut one wholesale (275 vs 297-298)
-- [ ] **Tumult history overlap** — de-dupe (20-21 vs 72-77)
-- [ ] **Martin speech-impediment scenes** — one scene
-- [ ] **Rosemary's second shop visit** — compress
-- [ ] **Harmonised-wave battles** — shorten the first, differentiate imagery
-- [ ] **Verbatim twin passages** — five-minute deletions (461/463, 261/312, 337/347, 342/347)
-- [ ] **Cut Daz** (decided, never executed)
-- [ ] **Fold Jemima into Cesira** (decided, never executed)
-- [ ] **Trim the ThinkTank assault by a third**
-
----
-
-## PASS 5 — The rewrites (real scene work — the big rocks)
-Do these last; they're where the creative weight is. Each is its own sitting (or several).
-
-- [ ] **The IT climax** — rewrite the H'gok/eldritch material into the brain-in-a-tank reveal, using your *"John set IT free"* mechanism (Baker enters the codes, John unknowingly releases it, the screen flickering through Baker/raven-hair/Jones)
-- [ ] **Front-half pacing** — the panel's "80 snippets before the mystery moves" problem; the merges in Pass 4 do most of this, but check the engine starts sooner
-- [ ] **Doug Goode scenes** — cut or move to prequel per Pass 0
-- [ ] **The ending** — land the *fragile-peace, Block-escapes, Chatsworth-gardens* version if it isn't already there
-- [ ] Optionally write in the best unused orphans (the "beige paradise" aging beat; Maurice's "fossilized apex predator" line)
+**Delete the junk that shouldn't be in the manuscript at all:**
+- [ ] Strip the leftover formatting gremlins from the old file conversion (stray spaces before apostrophes and quote marks) — one find-and-replace pass.
+- [ ] Delete the stray editing timestamp sitting in the middle of the prose (around the Erica section).
+- [ ] Delete the block of ALL-CAPS notes-to-self you left in the manuscript (around the ThinkTank section).
+- [ ] Pull the pile of raw brainstorming at the very end out of the manuscript — it's notes, not the book.
+- [ ] **The number-code (cipher) typos:** three of the coded spam-bot numbers decode wrong ("BEHOLD JT" should be "BEHOLD IT"; two others are garbled). Fix them so the hidden message reads cleanly, and re-encode the one long block that's scrambled.
 
 ---
 
-## PASS 6 — Final polish & publish prep
-- [ ] Full read-through, start to finish, out loud or via read-aloud — catch what's left
-- [ ] Optional: re-run the beta panel on the revised draft ("did the fixes work?")
-- [ ] Line-level polish pass
-- [ ] Format to standard manuscript format
-- [ ] **Decide the route:** query agents (write a query letter + 1-page synopsis) OR self-publish (KDP formatting)
-- [ ] Query / publish
+## PASS 2 — Cut the jokes that kill the feeling (one sweep, removal only)
+This is the single most-repeated note from the reader panel: a gag landing *on top of* a sad or tense moment deflates it. The rule your own book proves — a joke *before* a feeling works; a joke *during or after* it kills it. Full list is in the Quip Kill-List.
+
+- [ ] Work down the kill-list: **cut ~28 jokes** that sit on emotional peaks, and **move ~9** that are good but in the wrong spot (they belong before the moment, not after).
+- [ ] The one you deliberately keep: Jones's dying "I thought there would be more" — your own note says *whisper* it, don't cut it.
 
 ---
 
-**How to use this:** never look at more than the current pass. Cross off boxes. On a low day do Pass 1 boxes (mindless, satisfying). On a good day do Pass 3 or 5. The book is finished when the boxes are.
+## PASS 3 — Add the missing "why" (8 sentences you write yourself)
+Each is roughly one sentence, dropped into a scene that already exists. This is where the book's meaning goes onto the page. Two labels: **make it land** (let the reader feel it fully) vs **keep it faint** (a hint now, pays off in a later book — don't over-explain).
+
+- [ ] **Vetko is the fear of death** (make it land) — the line that reveals the whole frozen-nineties regime is one man terrified of dying and being left behind. *Do this one first — it's the spine of the book.*
+- [ ] **Why the regime is useless** (make it land) — tie the incompetence to why Vetko buggered off to his blimp. Per your own note, make it *boredom and disdain*, not "beaten by paperwork."
+- [ ] **Why John hides** (keep it faint) — a beat showing he's hiding because of a dangerous secret (only he and Vetko know what really happened to the Raven), not because he's a coward.
+- [ ] **The Raven / Erica connection** (keep it faint) — one physical detail linking John's dead wife to the legendary Raven (the hair: the Raven was dark-haired, Erica dyed hers blonde).
+- [ ] **The hint that something passed to John when Erica died** (keep it faint) — one line in his grief about how people always did what she said.
+- [ ] **Music vs the state** (make it land) — the moment the government's mind-control sound cuts out, fill the silence with Reza's illegal music. One beat, the whole music-vs-control idea made audible once.
+- [ ] **Vetko's first impossible moment needs setup** (keep it faint) — plant an earlier throwaway rumour so that when he does something inhuman at the climax, it reads as "of course," not "wait, what?" Also soften one of the two near-identical "this scene's finished" lines near the end.
+- [ ] **People follow John for no clear reason** (keep it faint) — one early beat where someone notices the room bending around him, so the later crowd scenes don't feel like they came from nowhere. (Do one or two of these, not all — too many and it stops being mysterious.)
+
+---
+
+## PASS 4 — Merge and cut scenes (structural, in Scrivener)
+The heavier surgery — combining repeated scenes and cutting dead weight. Do it in Scrivener where you can see scenes side by side.
+
+- [ ] **The repeated mornings/commutes:** you've got several near-identical "John wakes up / catches the bus" scenes (a hangover from the old show-the-monotony idea). Collapse them to two — one full morning, one broken-routine morning — and strip the re-described furniture from the rest.
+- [ ] **The doubled group-chat (govchat) transcripts:** merge the two "morning after" chats into one, and the two recruitment/vetting chats into one.
+- [ ] **Julie's baseball-bat backstory** is told twice — tell it once. And the **two early "creep past Julie's silent front door" visits** — one visit.
+- [ ] **The curfew/points rules** get explained twice early on — let the drone scene do all of it.
+- [ ] **The "who is the Raven / the Crows" explainer** appears twice — cut one of them entirely.
+- [ ] **The Tumult history** (population collapse, refugees) is covered twice — de-duplicate.
+- [ ] **Martin's speech-impediment scenes** — two of them, make it one.
+- [ ] **Rosemary's second visit to the shop** repeats the first almost word for word — compress it to just the joke and the exit.
+- [ ] **The two "wave of mind-controlled attackers" battles** read the same — shorten the first and make the imagery different.
+- [ ] **Five passages that are near-verbatim duplicates of each other** — quick deletions.
+- [ ] **Cut the character Daz** (you decided this in a note and never did it).
+- [ ] **Fold Jemima into Cesira** (also decided, never done — one character doing both jobs).
+- [ ] **The big ThinkTank assault at the end** runs too long — cut it by about a third.
+
+---
+
+## PASS 5 — The real rewrites (the big creative pieces — do these last)
+Each of these is its own sitting, or several. This is where the weight is.
+
+- [ ] **The climax reveal:** rewrite the current eldritch-horror ("H'gok") material into what you actually decided — the ThinkTank is a *brain in a jar* (the last Pulpos octopus, pickled, running Britain), and John *unknowingly sets it free*. Use your "John set IT free" version: Baker enters the codes even as he fights it, the screen flickering through Baker / Erica's hair / Jones's face.
+- [ ] **The slow start:** the reader panel said it takes ~80 passages before the plot actually gets going. The scene merges in Pass 4 do most of this — then check the central mystery kicks in sooner.
+- [ ] **Doug Goode:** cut those scenes or move them to the prequel, per your Pass 0 decision.
+- [ ] **The ending:** land your decided version — a *fragile, uneasy peace* (Block escapes, nothing's neatly fixed, quiet grief not triumph), ending on the Chatsworth-gardens image — if it isn't already there.
+- [ ] Optional: write in the best unused bits your notes turned up — the "beige paradise" scene about Reza and John getting old, and Maurice's "you're a fossilised apex predator, perfectly evolved for an ecosystem that doesn't exist anymore" line.
+
+---
+
+## PASS 6 — Final polish and getting it out
+- [ ] Read the whole thing start to finish (out loud, or with the phone reading it to you) — catch whatever's left.
+- [ ] Optional: re-run the reader panel on the revised draft to check the fixes worked.
+- [ ] One line-by-line polish pass.
+- [ ] Format it to standard manuscript layout.
+- [ ] **Decide how you're publishing:** send it to literary agents (which needs a query letter and a one-page synopsis) or self-publish (which needs formatting for Kindle/print).
+- [ ] Send it out.
+
+---
+
+**How to use this:** never look at more than the pass you're on. Cross off boxes. Bad day → do Pass 1 (mindless, satisfying). Good day → do a Pass 3 sentence or a Pass 5 rewrite. The book is finished when the boxes are.
