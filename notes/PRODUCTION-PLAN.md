@@ -6,16 +6,18 @@ The whole book-to-published job as an ordered checklist. Work top to bottom. Nev
 
 ---
 
-## PASS 0 — Decisions (no writing, one sitting)
-Settle the forks everything else depends on. These are choices, not prose. Answer each once, write the answer down, never argue it again.
+## PASS 0 — Decisions (SETTLED — don't reopen)
+These were the open forks. Now answered.
 
-- [ ] **Doug Goode on the page — cut him or keep him?** Your latest note (Jan 2026) says John's real past as Doug Goode / the Raven is *prequel-only*. But your 2023 notes drafted actual Doug Goode confrontation scenes for *this* book. Decide: those scenes get cut or moved to the prequel. (This decision controls the big rewrites in Pass 5.)
-- [ ] **When did the Pulpos (octopus) thing happen — before or after Erica's death?** Your notes place it both ways. Pick one, and make sure it fits when the ThinkTank/brain existed.
-- [ ] **How does Baker die?** Right now your notes kill him three different ways — eaten, shot, and knifed. Choose one.
-- [ ] **What year is the country frozen in?** It's drifted across notes from 1992 to 2000 to a vaguer "monoculture fracture." Lock one answer.
-- [ ] **How old is Reza?** (Fixes the age contradiction in Pass 1.) The maths currently makes him both ~19 and ~50. Decide his real age; everything else follows from it.
-- [ ] **How many Residential Zones are there?** The book says 42 in one place and at least 88 in another. Pick one number.
-- [ ] **Julie's fate — lock the single version:** she fought back, the sound-entity fried her mind, and she's held unconscious in a van (your April 2025 version). Confirm this and delete the other three versions floating in your notes.
+- [x] **The Tumult was ~10 years ago, so Reza is 19.** (You wanted John older than you to avoid Mary-Sueing; you've since aged into him, so it stopped mattering.) → In Pass 1, fix the age maths to land on this.
+- [x] **Baker's death:** he fights Elleray Palm, Wozzy stabs him, and he blows himself up.
+- [x] **The country is frozen in the year 2000.**
+- [x] **The Pulpos (octopus) incident happens *before* Erica's death — during it, in fact.** John is too consumed by her dying to really register it.
+- [x] **Doug Goode is never named in this book** — his real identity stays prequel-only. Nothing to cut; the "on-page Doug Goode scenes" the assessment flagged were old notes that never got in.
+- [ ] **Julie (leaning — confirm):** taken → Harmony fries her mind → held → found alive but broken among the prisoners when the Crows are freed near the end. The opening mystery, answered late and bleakly. Mostly an empty shell, with one flicker of the old Julie when she's found. Only "dead early" gets killed off.
+
+*Binned as not-real (the assessment over-reached):* the "42 vs 88 zones" contradiction — you never state a total, they're just zone numbers; and "Doug Goode on-page vs prequel" — he's never in the book.
+
 
 ---
 
@@ -35,10 +37,10 @@ Pure find-and-replace and small corrections. No creativity needed. Perfect for a
 
 **Numbers and facts that contradict each other — reconcile them:**
 - [ ] **Cesira Brogue was in power for how long?** "22 days" in one place, "99 days" in another. One number.
-- [ ] **Reza's age** — apply your Pass 0 decision; fix the "nine when the Tumult hit" line or the "I've got fifteen years on you" line so they agree.
-- [ ] **How long ago the Tumult / Vetko's rise was** — the arithmetic drifts by a year or two between mentions. Nail one timeline.
+- [ ] **Reza's age / the Tumult timing** — the Tumult was **10 years ago** and Reza is **19**. Fix the "I've got fifteen years on you" line and any other age maths so they land on that (the "nine when the Tumult hit" line is fine if the Tumult is 10 years ago and he's 19).
+- [ ] **Every "how long ago the Tumult was" mention** — make them all agree on ~10 years ago (Vetko's rise, the Clearings two years after, etc.).
 - [ ] **How many people died** — "forty percent" of the population in one place, "a third" in another. One figure.
-- [ ] **Zone count** — apply your Pass 0 number (42 vs 88); also standardise the spacing in zone codes ("RZ1" vs "RZ 88").
+- [ ] **Zone codes** — standardise the spacing ("RZ1" vs "RZ 88"). (No count to fix — you never state a total.)
 - [ ] **The crisp-factory octopus incident** — it's "PZ12" once and "RZ12" another (and John's fake ID is also Zone 12). Line up the prefix.
 - [ ] **Is Tina Bond alive (and a suspect) or dead?** The book currently implies both. Decide.
 - [ ] **The fine amount:** Jones expects to be "three hundred quid poorer" but the drone fines her "ONE HUNDRED POUNDS." Reconcile, or have her notice the discrepancy.
@@ -111,7 +113,7 @@ Each of these is its own sitting, or several. This is where the weight is.
 
 - [ ] **The climax reveal:** rewrite the current eldritch-horror ("H'gok") material into what you actually decided — the ThinkTank is a *brain in a jar* (the last Pulpos octopus, pickled, running Britain), and John *unknowingly sets it free*. Use your "John set IT free" version: Baker enters the codes even as he fights it, the screen flickering through Baker / Erica's hair / Jones's face.
 - [ ] **The slow start:** the reader panel said it takes ~80 passages before the plot actually gets going. The scene merges in Pass 4 do most of this — then check the central mystery kicks in sooner.
-- [ ] **Doug Goode:** cut those scenes or move them to the prequel, per your Pass 0 decision.
+- [ ] **Baker's death** — write it as decided: he fights Elleray Palm, Wozzy stabs him, and he blows himself up. (Replaces whatever's currently there.)
 - [ ] **The ending:** land your decided version — a *fragile, uneasy peace* (Block escapes, nothing's neatly fixed, quiet grief not triumph), ending on the Chatsworth-gardens image — if it isn't already there.
 - [ ] Optional: write in the best unused bits your notes turned up — the "beige paradise" scene about Reza and John getting old, and Maurice's "you're a fossilised apex predator, perfectly evolved for an ecosystem that doesn't exist anymore" line.
 
