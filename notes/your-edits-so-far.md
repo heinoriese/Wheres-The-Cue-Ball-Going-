@@ -292,3 +292,16 @@
 **Your version:**
 
 > John stared after him until he was out view. Once he was gone he shut the door, locked it, unlocked it, then locked it again. John flicked the television on to the news, Gary Bingehound was in a helicopter decrying the rioting down in RZ 11. John sat. And he stared. He sat and he stared. He sat and he stared. And he got up, he threw the door open, he sprinted out into the zone, past weapon carrying crows and the ruins of the checkpoint, down the hill far too quickly that he might fall and trip and break his arms but it was fine he was flying and he was down the hill and throwing himself across the bonnet of the mustang even as Reza pulled the car out into the road. He clung to it, his face pressed against the glass. “Reza, Reza. Do you fancy going to the pub?  THE ACTUAL END
+---
+
+# New passages you added (via "+ add") — not edits, brand-new writing
+
+These two you captured fresh in the app. They're in the manuscript but weren't part of the edits above — drop them into Scrivener wherever they belong.
+
+**Added 2026-08-16:**
+> Maybe the Technomancers, out there somewhere, playing PS3s and listening to Kasabian.
+
+**Added 2026-08-19:**
+> It was the 17th of December 1998 again, and winter bit hard on the ninth time around.
+
+*(Note: this one says 1998 — you've since locked the frozen year as 2000, so tweak the date when you place it.)*
