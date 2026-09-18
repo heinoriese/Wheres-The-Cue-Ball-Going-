@@ -14,7 +14,7 @@ These were the open forks. Now answered.
 - [x] **The country is frozen in the year 2000.**
 - [x] **The Pulpos (octopus) incident happens *before* Erica's death — during it, in fact.** John is too consumed by her dying to really register it.
 - [x] **Doug Goode is never named in this book** — his real identity stays prequel-only. Nothing to cut; the "on-page Doug Goode scenes" the assessment flagged were old notes that never got in.
-- [ ] **Julie (leaning — confirm):** taken → Harmony fries her mind → held → found alive but broken among the prisoners when the Crows are freed near the end. The opening mystery, answered late and bleakly. Mostly an empty shell, with one flicker of the old Julie when she's found. Only "dead early" gets killed off.
+- [x] **Julie:** taken → held unconscious in the van (as already written) → her mind fried by Harmony → **found by John himself when they release the Crows near the end, a weird husk woman.** The mystery that opens the book, answered late, by the protagonist, with a person-shaped hole where Julie was. One coherent arc — only "dead early" and "Roger kills her" get cut.
 
 *Binned as not-real (the assessment over-reached):* the "42 vs 88 zones" contradiction — you never state a total, they're just zone numbers; and "Doug Goode on-page vs prequel" — he's never in the book.
 
