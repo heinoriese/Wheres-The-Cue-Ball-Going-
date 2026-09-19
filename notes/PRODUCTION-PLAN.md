@@ -26,12 +26,11 @@ Pure find-and-replace and small corrections. No creativity needed. Perfect for a
 
 **Names spelled two ways — pick one and make it consistent everywhere:**
 - [ ] **Delta's surname:** it's "Isol" in most places and "Ilos" in a few. Make it **Isol** throughout.
-- [ ] **Mad O'Toole's first name:** he's "Peter" in some scenes and "Paul" in others. Pick one (watch out — a *Paul* O'Toole clashes with the dead character Paul Bond).
-- [ ] **Felicity's surname:** she's "Felicity Scrope" and then "Felicity Carter" two sentences later. One surname.
+- [ ] **Mad O'Toole:** strip the first name — he's just **Mad O'Toole**, no explanation. (The joke: nobody knows why he's "Mad" when he's usually perfectly pleasant.) Remove the stray "Peter" / "Paul".
+- [ ] **Felicity's surname:** she flips from "Scrope" to "Carter" — make it **Scrope** throughout (odder, more sinister — fits a Vetko functionary).
 - [ ] **The soldiers' uniforms:** "Red Coats" in some battle lines, "Red Cloaks" in others. Same faction — pick one word.
 - [ ] **The neighbourhood:** "Cloudtop View" everywhere except a couple of stray "Cloudtop Hill" / "Hill Top" leftovers from an old draft. Make it all **Cloudtop View**.
 - [ ] **"Contabulary"** — typo for **Constabulary** (correct everywhere else).
-- [ ] **The Goldblums:** the living Watch member "Naj" and the bereaved widow "Anaj Goldblum" have their names muddled/swapped. Give the dead husband and the widow clearly different names.
 - [ ] **Ethel's blade:** it's spelled "kukris" once and "Khukri" elsewhere — one spelling.
 - [ ] **The music playing:** dialogue says Sugar Ray, the next line says "Brian Ferry" — pick one (and if it's Ferry, it's *Bryan*).
 
@@ -40,13 +39,12 @@ Pure find-and-replace and small corrections. No creativity needed. Perfect for a
 - [ ] **Reza's age / the Tumult timing** — the Tumult was **10 years ago** and Reza is **19**. Fix the "I've got fifteen years on you" line and any other age maths so they land on that (the "nine when the Tumult hit" line is fine if the Tumult is 10 years ago and he's 19).
 - [ ] **Every "how long ago the Tumult was" mention** — make them all agree on ~10 years ago (Vetko's rise, the Clearings two years after, etc.).
 - [ ] **How many people died** — "forty percent" of the population in one place, "a third" in another. One figure.
-- [ ] **Zone codes** — standardise the spacing ("RZ1" vs "RZ 88"). (No count to fix — you never state a total.)
-- [ ] **The crisp-factory octopus incident** — it's "PZ12" once and "RZ12" another (and John's fake ID is also Zone 12). Line up the prefix.
+- [ ] **Zone codes** — no space: "RZ1", "RZ88" throughout. (No count to fix.)
 - [ ] **Is Tina Bond alive (and a suspect) or dead?** The book currently implies both. Decide.
-- [ ] **The fine amount:** Jones expects to be "three hundred quid poorer" but the drone fines her "ONE HUNDRED POUNDS." Reconcile, or have her notice the discrepancy.
-- [ ] **The points system:** it's tracked "for the month" in one place and "THIS POINTS QUARTER" in another; "two infractions in 24 hours" vs her own "two in a week." State the rules once and keep them consistent.
 - [ ] **The TumTum cell headcount:** "bloody five of them" vs John's "six was all you could manage?" for the same group. If Jemima arrives late, show her arriving.
-- [ ] **Where the ThinkTank / Harmony physically is** — it's described as being in the "MoM," the "Ministry of Peace," and "The Madhouse." Pick one building and one name for it.
+- [ ] **The Ministry of Peace / The Madhouse — one name.** The Harmony *relocation* (from the MoM to the Ministry of Peace) is intentional — keep it. But "Ministry of Peace" and "The Madhouse" are the same building: pick ONE name and use it throughout.
+
+*Deliberate — not mistakes, leave them:* the **Goldblums** ("Naj" / "Anaj") are both "not actually Jeff" — a running Jeff Goldblum gag; **PZ12 vs RZ12** is Production Zone vs Residential Zone, two different places; and the **£300-vs-£100 fine** and the **points-system inconsistency** are the point — the system is deliberately shit.
 
 **Things that physically don't add up — repair them:**
 - [ ] **The estate has "four roads" but five are named** (Derek Avenue is the fifth, and it's where both Jones and John live). Fix the count. Also "Larkin Street" vs "Larkin Avenue" — pick one.
