@@ -10,7 +10,7 @@ The whole book-to-published job as an ordered checklist. Work top to bottom. Nev
 These were the open forks. Now answered.
 
 - [x] **The Tumult was ~10 years ago, so Reza is 19.** (You wanted John older than you to avoid Mary-Sueing; you've since aged into him, so it stopped mattering.) → In Pass 1, fix the age maths to land on this.
-- [x] **Baker's death:** he fights Elleray Palm, Wozzy stabs him, and he blows himself up.
+- [x] **Baker's death:** John unknowingly frees the brain → that releases Baker from its control and he's lucid for the first time → lucid Baker blows himself up *trying to stop it*. The motive stays hidden: it reads as absurdist "of course he blows it all up," but it's actually his one clear-headed act. (Reconciles with the note "Baker blowing it up is his last attempt to stop.")
 - [x] **The country is frozen in the year 2000.**
 - [x] **The Pulpos (octopus) incident happens *before* Erica's death — during it, in fact.** John is too consumed by her dying to really register it.
 - [x] **Doug Goode is never named in this book** — his real identity stays prequel-only. Nothing to cut; the "on-page Doug Goode scenes" the assessment flagged were old notes that never got in.
@@ -111,7 +111,7 @@ Each of these is its own sitting, or several. This is where the weight is.
 
 - [ ] **The climax reveal:** rewrite the current eldritch-horror ("H'gok") material into what you actually decided — the ThinkTank is a *brain in a jar* (the last Pulpos octopus, pickled, running Britain), and John *unknowingly sets it free*. Use your "John set IT free" version: Baker enters the codes even as he fights it, the screen flickering through Baker / Erica's hair / Jones's face.
 - [ ] **The slow start:** the reader panel said it takes ~80 passages before the plot actually gets going. The scene merges in Pass 4 do most of this — then check the central mystery kicks in sooner.
-- [ ] **Baker's death** — write it as decided: he fights Elleray Palm, Wozzy stabs him, and he blows himself up. (Replaces whatever's currently there.)
+- [ ] **Baker's death** — write it as decided: John's release of the brain snaps Baker lucid, and he blows himself up trying to stop it (reads as a gag, motive hidden). (Replaces whatever's currently there.)
 - [ ] **The ending:** the *fragile, uneasy peace* shape (Block escapes, nothing neatly fixed, quiet grief not triumph) — **confirm this is right for THIS book**, then land it. Its literal final image is **open** (the Chatsworth-gardens note was from a different book, now removed).
 - [ ] Optional: write in the best unused bits your notes turned up — the "beige paradise" scene about Reza and John getting old, and Maurice's "you're a fossilised apex predator, perfectly evolved for an ecosystem that doesn't exist anymore" line.
 
