@@ -100,8 +100,8 @@ The heavier surgery — combining repeated scenes and cutting dead weight. Do it
 - [ ] **Rosemary's second visit to the shop** repeats the first almost word for word — compress it to just the joke and the exit.
 - [ ] **The two "wave of mind-controlled attackers" battles** read the same — shorten the first and make the imagery different.
 - [ ] **Five passages that are near-verbatim duplicates of each other** — quick deletions.
-- [ ] **Cut the character Daz** (you decided this in a note and never did it).
-- [ ] **Fold Jemima into Cesira** (also decided, never done — one character doing both jobs).
+- [ ] **Daz — keep him, don't protect him.** He's a one-note govchat voice (bowels; the semi-literate texts). Leave him as background chorus texture, give him nothing more; if a govchat scene gets cut in this pass, he goes with it and his best bowel gag gets absorbed into another member.
+- [ ] **Split Jemima — don't just fold her into Cesira.** Her medic + driver + physical roles → **Delta**; her figurehead-making role (forcing Cesira into the icon costume) → **Cesira mythologising herself** (funnier, nastier, fits the golden-statue ego). Jemima removed; Delta and Cesira both get richer.
 - [ ] **The big ThinkTank assault at the end** runs too long — cut it by about a third.
 
 ---
