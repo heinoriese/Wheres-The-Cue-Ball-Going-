@@ -94,7 +94,7 @@ The heavier surgery — combining repeated scenes and cutting dead weight. Do it
 
 - [ ] **The repeated mornings/commutes:** you've got several near-identical "John wakes up / catches the bus" scenes (a hangover from the old show-the-monotony idea). Collapse them to two — one full morning, one broken-routine morning — and strip the re-described furniture from the rest.
 - [ ] **The doubled group-chat (govchat) transcripts:** merge the two "morning after" chats into one, and the two recruitment/vetting chats into one.
-- [ ] **Julie's baseball-bat backstory** is told twice — tell it once. And the **two early "creep past Julie's silent front door" visits** — one visit.
+- [ ] **Julie's baseball-bat backstory** is told twice — tell it once. And the **two early "creep past Julie's silent front door" visits** → collapse to one: **Jones swings by Julie's on her way back from visiting Bollo's grave.** One walk, both beats — the silent door folded into the dog-grief scene.
 - [ ] **The curfew/points rules** get explained twice early on — let the drone scene do all of it.
 - [ ] **The "who is the Raven / the Crows" explainer** appears twice — cut one of them entirely.
 - [ ] **The Tumult history** (population collapse, refugees) is covered twice — de-duplicate.
