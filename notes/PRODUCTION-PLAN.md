@@ -112,7 +112,7 @@ Each of these is its own sitting, or several. This is where the weight is.
 - [ ] **The climax reveal:** rewrite the current eldritch-horror ("H'gok") material into what you actually decided — the ThinkTank is a *brain in a jar* (the last Pulpos octopus, pickled, running Britain), and John *unknowingly sets it free*. Use your "John set IT free" version: Baker enters the codes even as he fights it, the screen flickering through Baker / Erica's hair / Jones's face.
 - [ ] **The slow start:** the reader panel said it takes ~80 passages before the plot actually gets going. The scene merges in Pass 4 do most of this — then check the central mystery kicks in sooner.
 - [ ] **Baker's death** — write it as decided: he fights Elleray Palm, Wozzy stabs him, and he blows himself up. (Replaces whatever's currently there.)
-- [ ] **The ending:** land your decided version — a *fragile, uneasy peace* (Block escapes, nothing's neatly fixed, quiet grief not triumph), ending on the Chatsworth-gardens image — if it isn't already there.
+- [ ] **The ending:** the *fragile, uneasy peace* shape (Block escapes, nothing neatly fixed, quiet grief not triumph) — **confirm this is right for THIS book**, then land it. Its literal final image is **open** (the Chatsworth-gardens note was from a different book, now removed).
 - [ ] Optional: write in the best unused bits your notes turned up — the "beige paradise" scene about Reza and John getting old, and Maurice's "you're a fossilised apex predator, perfectly evolved for an ecosystem that doesn't exist anymore" line.
 
 ---
