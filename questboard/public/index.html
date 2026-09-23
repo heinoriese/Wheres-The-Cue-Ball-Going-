@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Questboard</title>
+<meta name="description" content="Questboard — a shared, gamified life tracker." />
+<link rel="manifest" href="manifest.webmanifest" />
+<link rel="apple-touch-icon" href="icons/logo.jpg" />
+<meta name="theme-color" content="#1c1224" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div id="app">
+
+  <div id="splash">
+    <img src="icons/logo.jpg" alt="Questboard" />
+    <div class="splash-picks">
+      <button class="pick-btn pink" data-person="sarah">🛡️ Sarah's Board</button>
+      <button class="pick-btn blue" data-person="aaron">🛡️ Aaron's Board</button>
+    </div>
+    <p class="hint">Working prototype — checkboxes, delegation, grouping and the day/weather schedule are all live. Weekly Recap and Achievements are stubbed for now.</p>
+  </div>
+
+  <div id="board">
+    <div class="topbar">
+      <div class="topbar-row1">
+        <button class="who-btn" id="swapBtn">&larr; <span id="whoLabel">Sarah</span></button>
+        <div class="datepill"><b id="dayName">SUNDAY</b><span id="dateStr">16 Aug 2026</span></div>
+      </div>
+      <div class="topbar-row2">
+        <select class="weather-select" id="weatherSelect">
+          <option value="any">Weather: Normal</option>
+          <option value="hot">Weather: Hot (27&deg;+)</option>
+          <option value="cold">Weather: Cold (10&deg; or below)</option>
+          <option value="rainy">Weather: Rainy</option>
+          <option value="snowy">Weather: Snowy</option>
+        </select>
+        <button class="next-day-btn" id="nextDayBtn">NEXT DAY &rarr;</button>
+      </div>
+    </div>
+
+    <div class="xp-block">
+      <div class="xp-head"><b>TODAY OVERALL</b><span id="xpText">0 / 0</span></div>
+      <div class="bar-outer"><div class="bar-inner" id="xpBar" style="width:0%"></div></div>
+    </div>
+
+    <div class="scroller">
+      <div class="view active" id="view-today"></div>
+      <div class="view" id="view-bank"></div>
+      <div class="view" id="view-recap">
+        <div class="stub">
+          <div class="big">📈 Weekly Recap</div>
+          <p>Trend chart, category breakdown, achievements unlocked, snooze/pause reasons and "coming up next week" all land here next pass. Not built yet.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="navbar">
+      <button class="navitem active" data-view="today">
+        <svg viewBox="0 0 16 16" shape-rendering="crispEdges"><rect x="4" y="0" width="8" height="2" fill="currentColor"/><rect x="2" y="2" width="12" height="2" fill="currentColor"/><rect x="0" y="4" width="16" height="2" fill="currentColor"/><rect x="0" y="6" width="16" height="2" fill="currentColor"/><rect x="2" y="8" width="12" height="2" fill="currentColor"/><rect x="2" y="10" width="12" height="2" fill="currentColor"/><rect x="4" y="12" width="8" height="2" fill="currentColor"/><rect x="6" y="14" width="4" height="2" fill="currentColor"/></svg>
+        <span>Today</span>
+      </button>
+      <button class="navitem" data-view="bank">
+        <svg viewBox="0 0 16 16" shape-rendering="crispEdges"><rect x="6" y="0" width="4" height="10" fill="currentColor"/><rect x="2" y="10" width="12" height="2" fill="currentColor"/><rect x="6" y="12" width="4" height="4" fill="currentColor"/></svg>
+        <span>Task Bank</span>
+      </button>
+      <button class="navitem" data-view="recap">
+        <svg viewBox="0 0 14 12" shape-rendering="crispEdges"><rect x="6" y="0" width="2" height="2" fill="currentColor"/><rect x="4" y="2" width="6" height="2" fill="currentColor"/><rect x="0" y="4" width="14" height="2" fill="currentColor"/><rect x="2" y="6" width="10" height="2" fill="currentColor"/><rect x="2" y="8" width="4" height="2" fill="currentColor"/><rect x="8" y="8" width="4" height="2" fill="currentColor"/><rect x="0" y="10" width="2" height="2" fill="currentColor"/><rect x="4" y="10" width="2" height="2" fill="currentColor"/><rect x="8" y="10" width="2" height="2" fill="currentColor"/><rect x="12" y="10" width="2" height="2" fill="currentColor"/></svg>
+        <span>Recap</span>
+      </button>
+    </div>
+  </div>
+
+</div>
+<script src="app.js"></script>
+</body>
+</html>
