@@ -30,6 +30,7 @@
   state.date.setHours(0,0,0,0);
 
   var TASKS = [];
+  var TASK_BY_ID = {};
 
   function isoDate(d){ return d.toISOString().slice(0,10); }
   function loadJSON(key, fallback){ try{ var v = localStorage.getItem(key); return v ? JSON.parse(v) : fallback; }catch(e){ return fallback; } }
@@ -41,6 +42,7 @@
   var extras      = loadJSON('qb_extras', {});
   var bossShown   = loadJSON('qb_bossshown', {});     // date -> boss task id featured that day
   var bossDone    = loadJSON('qb_bossdone', {});       // taskId -> isoDate last completed/skipped (for rotation)
+  var rotationPicks = loadJSON('qb_rotationpicks', {}); // dateISO -> { sectionKey: [taskId,...] } — decided once per day, not per render
 
   function persistAll(){
     saveJSON('qb_completions', completions);
@@ -49,6 +51,7 @@
     saveJSON('qb_extras', extras);
     saveJSON('qb_bossshown', bossShown);
     saveJSON('qb_bossdone', bossDone);
+    saveJSON('qb_rotationpicks', rotationPicks);
   }
 
   function dayMatches(when, date){
@@ -139,8 +142,29 @@
       }
     });
 
+    var picks = getRotationPicksForToday(rotationCandidates);
+    Object.keys(picks).forEach(function(sec){
+      picks[sec].forEach(function(id){
+        var t = TASK_BY_ID[id];
+        if(t) buckets[sec].push(t);
+      });
+    });
+
+    return buckets;
+  }
+
+  // Decides which rotation-eligible tasks (Side Quests, every-N-day items) show today,
+  // ONCE per calendar day, and caches the decision. Without this cache, re-rendering for
+  // any reason (ticking a box, opening a section, changing weather) would re-run the "who's
+  // due" calculation and immediately un-pick whatever was just shown, since its lastShown
+  // date is now "today" — making the list appear to reshuffle on every interaction.
+  function getRotationPicksForToday(rotationCandidates){
+    var dISO = isoDate(state.date);
+    if(rotationPicks[dISO]) return rotationPicks[dISO];
+
     var bySection = {};
     rotationCandidates.forEach(function(t){ (bySection[t.section] = bySection[t.section]||[]).push(t); });
+    var picks = {};
     Object.keys(bySection).forEach(function(sec){
       var capN = sec === 'side' ? SIDE_QUEST_CAP : 99;
       var list = bySection[sec].map(function(t){
@@ -151,13 +175,11 @@
       }).filter(function(x){ return x.due; })
         .sort(function(a,b){ return b.wait - a.wait; })
         .slice(0, capN);
-      list.forEach(function(x){
-        buckets[sec].push(x.t);
-        lastShown[x.t.id] = dISO;
-      });
+      picks[sec] = list.map(function(x){ return x.t.id; });
+      list.forEach(function(x){ lastShown[x.t.id] = dISO; });
     });
-
-    return buckets;
+    rotationPicks[dISO] = picks;
+    return picks;
   }
 
   // ---- grouping ----
@@ -511,6 +533,7 @@
 
   fetch('tasks.json').then(function(r){ return r.json(); }).then(function(data){
     TASKS = data;
+    TASKS.forEach(function(t){ TASK_BY_ID[t.id] = t; });
     init();
   });
 })();
