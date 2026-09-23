@@ -1,0 +1,12 @@
+{
+  "name": "wheres-the-cue-ball-going-root",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Root launcher so Railway can deploy the Questboard app without needing a Root Directory setting.",
+  "scripts": {
+    "start": "node questboard/server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
