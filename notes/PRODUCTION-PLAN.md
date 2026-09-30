@@ -79,7 +79,7 @@ This is the single most-repeated note from the reader panel: a gag landing *on t
 ## PASS 3 — Add the missing "why" (8 sentences you write yourself)
 Each is roughly one sentence, dropped into a scene that already exists. This is where the book's meaning goes onto the page. Two labels: **make it land** (let the reader feel it fully) vs **keep it faint** (a hint now, pays off in a later book — don't over-explain).
 
-- [ ] **Vetko is the fear of death** (make it land) — the line that reveals the whole frozen-nineties regime is one man terrified of dying and being left behind. *Do this one first — it's the spine of the book.*
+- [ ] **Vetko is the fear of death** (make it land) — the line that reveals the whole frozen-nineties regime is one man terrified of dying and being left behind. **His first line to Baker, walking back into power after years away, is "You've got old, Ian."** The thing that rattles the tyrant on his return isn't the rioting — it's that his oldest ally has *aged*. That opener makes the death-fear legible without a speech. *Do this one first — it's the spine of the book.*
 - [ ] **Why the regime is useless** (make it land) — tie the incompetence to why Vetko buggered off to his blimp. Per your own note, make it *boredom and disdain*, not "beaten by paperwork."
 - [ ] **Why John hides** (keep it faint) — a beat showing he's hiding because of a dangerous secret (only he and Vetko know what really happened to the Raven), not because he's a coward.
 - [ ] **The Raven / Erica connection** (keep it faint) — one physical detail linking John's dead wife to the legendary Raven (the hair: the Raven was dark-haired, Erica dyed hers blonde).
