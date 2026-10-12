@@ -53,7 +53,7 @@ If Madhouse = MoP = ThinkTank site, say it once, plainly, before the assault. If
 
 **E10. Felicity's surname changes mid-snippet.** #507: "Felicity Scrope" then two sentences later "said Felicity Carter." **Fix:** one surname.
 
-**E11. Red Coats vs Red Cloaks.** "Red Coats" 530, 558; "Red Cloaks" 545, 560, 567 — same faction, same battle. **Fix:** one term.
+**E11. Red Coats vs Red Cloaks.** "Red Coats" 530, 558; "Red Cloaks" 545, 560, 567 — same faction, same battle. **Fix:** replace both with **Redcaps**.
 
 **E12. Cloudtop Hill vs Cloudtop View.** #492 "down Cloudtop Hill" vs #547 and everywhere else "Cloudtop View" (incl. all GovChat headers). Related: snippet 2's "Hill Top Neighbourhood Watch" (twice) vs "Cloudtop Neighbourhood Watch" everywhere else (25, 41, 51, 61, 245) — "Hill Top" reads as the early-draft name leaking through in both places. **Fix:** Cloudtop View / Cloudtop Neighbourhood Watch throughout.
 

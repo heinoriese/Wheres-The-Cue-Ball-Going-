@@ -31,7 +31,7 @@ Pure find-and-replace and small corrections. No creativity needed. Perfect for a
 - [ ] **Delta's surname:** it's "Isol" in most places and "Ilos" in a few. Make it **Isol** throughout.
 - [ ] **Mad O'Toole:** strip the first name — he's just **Mad O'Toole**, no explanation. (The joke: nobody knows why he's "Mad" when he's usually perfectly pleasant.) Remove the stray "Peter" / "Paul".
 - [ ] **Felicity's surname:** she flips from "Scrope" to "Carter" — make it **Scrope** throughout (odder, more sinister — fits a Vetko functionary).
-- [ ] **The soldiers' uniforms:** "Red Coats" in some battle lines, "Red Cloaks" in others. Same faction — pick one word.
+- [ ] **The soldiers' name:** replace every "Red Coats" / "Red Cloaks" reference with **Redcaps** — the Realist force's military tier, the hard end above the Order Police. *(Senior ones can be **Provosts** if you ever want the rank split; otherwise Redcaps throughout.)*
 - [ ] **The neighbourhood:** "Cloudtop View" everywhere except a couple of stray "Cloudtop Hill" / "Hill Top" leftovers from an old draft. Make it all **Cloudtop View**.
 - [ ] **"Contabulary"** — typo for **Constabulary** (correct everywhere else).
 - [ ] **Ethel's blade:** it's spelled "kukris" once and "Khukri" elsewhere — one spelling.
